@@ -8,6 +8,7 @@
 <!-- TODO buscar informações como quilómetros e horários aos apis do google -->
 <!-- TODO ligar o numero de telemovel a app de chamadas  -->
 <!-- TODO traduzir para inglês -->
+<!-- TODO convem ter o número do dep, também-->
     <TextView
         android:id="@+id/tituloDeca"
         android:layout_width="361dp"
