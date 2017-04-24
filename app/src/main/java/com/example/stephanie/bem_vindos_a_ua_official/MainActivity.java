@@ -1,6 +1,7 @@
 package com.example.stephanie.bem_vindos_a_ua_official;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -167,7 +168,12 @@ public class MainActivity extends AppCompatActivity
                 .snippet("Saber Mais")
                 //adicionar aqui icone personalizado que vai ter o número do dep
         );
-        mMap.setOnInfoWindowClickListener((GoogleMap.OnInfoWindowClickListener) this);
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                Intent intent = new Intent(MainActivity.this, DecaActivity.class);
+                startActivity(intent);
+            }});
 
 //        mMap.setOnMarkerClickListener(
 //                new GoogleMap.OnMarkerClickListener() {
