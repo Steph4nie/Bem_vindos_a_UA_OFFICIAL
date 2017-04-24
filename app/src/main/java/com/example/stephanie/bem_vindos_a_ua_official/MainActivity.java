@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -124,6 +124,9 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -220,6 +223,8 @@ public class MainActivity extends AppCompatActivity
 
 
         }
+
+
     }
 
 }
