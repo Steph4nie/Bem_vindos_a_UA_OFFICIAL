@@ -27,6 +27,18 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="60dp"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:text="Add Geofencing"
+        android:layout_alignTop="@+id/map"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:onClick="addGeofencesButtonHandler"
+        />
 </RelativeLayout>
 
     <android.support.design.widget.NavigationView
