@@ -246,20 +246,31 @@ public class MainActivity extends AppCompatActivity
 
 //        usar janelas personalizadas
 //        link para mandar para uma pagina do deca mesmo
-        Marker deca = mMap.addMarker(new MarkerOptions()
+        final Marker deca = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(40.628842, -8.656629))
-                        .title("21 - Deca")
+                        .title("Deca")
                         .snippet("Saber Mais")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcadores_deca_02)
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
                 //adicionar aqui icone personalizado que vai ter o número do dep
         ));
-        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                Intent intent = new Intent(MainActivity.this, DecaActivity.class);
-                startActivity(intent);
-            }
-        });
+
+            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                @Override
+                public void onInfoWindowClick(Marker deca) {
+                    Intent intent = new Intent(MainActivity.this, DecaActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+
+
+        final Marker CCCI = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(40.629071, -8.656862))
+                .title("CCCI")
+                .snippet("Saber Mais")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
+                        //adicionar aqui icone personalizado que vai ter o número do dep
+                ));
 
 
     }
