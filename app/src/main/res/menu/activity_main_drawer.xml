@@ -2,10 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/folded_newspaper"
-            android:title="Noticias" />
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/maps"
+            android:title="Mapa" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/info"
@@ -15,9 +16,9 @@
             android:icon="@drawable/stops"
             android:title="Roteiros" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/maps"
-            android:title="Mapa" />
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/folded_newspaper"
+            android:title="Noticias" />
     </group>
 
 </menu>

@@ -47,6 +47,8 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         buildGoogleApiClient();
+
+        TextView textView = (TextView) findViewById(R.id.telefone_numero);
     }
 
     protected synchronized void buildGoogleApiClient() {
@@ -132,6 +134,11 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .getLastLocation(mGoogleApiClient);
 //40.628842, -8.656629
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?daddr=" + 40.628842 + "," + -8.656629));
+        startActivity(intent);
+    }
+
+    public void getActionDial(View view) {
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "234 370 389"));
         startActivity(intent);
     }
 
