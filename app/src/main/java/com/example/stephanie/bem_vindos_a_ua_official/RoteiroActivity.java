@@ -11,6 +11,7 @@ import android.view.MenuItem;
  */
 
 public class RoteiroActivity extends AppCompatActivity{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,9 +20,9 @@ public class RoteiroActivity extends AppCompatActivity{
         ActionBar actionBar = this.getSupportActionBar();
 
         // Set the action bar back button to look like an up button
-//        if (actionBar != null) {
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//        }
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
     }
 

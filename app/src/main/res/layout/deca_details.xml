@@ -86,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="234 370 389"
+                android:text="@string/numero"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="12dp"
@@ -162,8 +162,6 @@
         app:pressedTranslationZ="12dp"
         android:onClick="getDirectionsFromCurrentLocation"
         />
-
-
 
 
     <!--<TextView-->

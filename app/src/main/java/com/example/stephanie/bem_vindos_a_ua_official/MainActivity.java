@@ -252,15 +252,16 @@ public class MainActivity extends AppCompatActivity
                         .snippet("Saber Mais")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
                 //adicionar aqui icone personalizado que vai ter o número do dep
-        ));
 
-            mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                @Override
-                public void onInfoWindowClick(Marker deca) {
+        ));
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
                     Intent intent = new Intent(MainActivity.this, DecaActivity.class);
                     startActivity(intent);
-                }
-            });
+            }
+        });
+
 
 
 
