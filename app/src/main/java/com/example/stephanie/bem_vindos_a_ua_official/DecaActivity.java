@@ -51,6 +51,7 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
         buildGoogleApiClient();
 
         TextView textView = (TextView) findViewById(R.id.telefone_numero);
+
     }
 
     @Override

@@ -191,7 +191,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         int id = item.getItemId();
-
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
@@ -200,6 +204,7 @@ public class MainActivity extends AppCompatActivity
             // atividade roteiros
             startActivity(new Intent(this, RoteiroActivity.class));
             return true;
+
 
         } else if (id == R.id.nav_manage) {
 
