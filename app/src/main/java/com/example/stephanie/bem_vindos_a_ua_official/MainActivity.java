@@ -62,7 +62,7 @@ import static com.example.stephanie.bem_vindos_a_ua_official.R.id.map;
 // TODO lembrar que a rotação do telemovel pode dar cabo da app então é preciso ver o ciclo de vida (ate agora esta tudo bem, é para lembrar no fim
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener, ResultCallback<Status> {
+        implements NavigationView.OnNavigationItemSelectedListener, GoogleMap.OnMarkerClickListener, OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener, ResultCallback<Status> {
 
     private GoogleMap mMap;
     private PopupWindow popupWindow;
@@ -149,15 +149,15 @@ public class MainActivity extends AppCompatActivity
         alert.show();
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        if (drawer.isDrawerOpen(GravityCompat.START)) {
-//            drawer.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -189,6 +189,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
@@ -204,9 +205,6 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
@@ -246,22 +244,17 @@ public class MainActivity extends AppCompatActivity
 
 //        usar janelas personalizadas
 //        link para mandar para uma pagina do deca mesmo
+        googleMap.setOnMarkerClickListener((GoogleMap.OnMarkerClickListener) this);
+
         final Marker deca = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(40.628842, -8.656629))
                         .title("Deca")
-                        .snippet("Saber Mais")
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
                 //adicionar aqui icone personalizado que vai ter o número do dep
 
         ));
-        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                    Intent intent = new Intent(MainActivity.this, DecaActivity.class);
-                    startActivity(intent);
-            }
-        });
 
+        //https://stackoverflow.com/questions/14226453/google-maps-api-v2-how-to-make-markers-clickable
 
 
 
@@ -272,9 +265,38 @@ public class MainActivity extends AppCompatActivity
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
                         //adicionar aqui icone personalizado que vai ter o número do dep
                 ));
-
-
     }
+
+
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        String name= marker.getTitle();
+        if (name.equalsIgnoreCase("Deca"))
+        {
+            startActivity(new Intent(this, DecaActivity.class));
+        }
+        if (name.equalsIgnoreCase("CCCI")) {
+            //intent for CCCI
+        }
+
+       return true;
+    }
+
+//    @Override
+//    public boolean onMarkerClick(Marker marker) {
+////        String name= marker.getTitle();
+////
+////        if (name.equals("Deca"))
+////        {
+////            startActivity(new Intent(this, DecaActivity.class));
+////            return true;
+////            //write your code here
+////        }
+////        return true;
+//    }
+
+
 
     //TODO 2 RA https://www.youtube.com/watch?v=8mC_QRYHHZ0&list=PLREy-kwYCLATUVKOsLJ8RAoiK_wHU-79z&t=85s&index=92
 
@@ -290,6 +312,7 @@ public class MainActivity extends AppCompatActivity
         super.onStop();
         mGoogleApiClient.disconnect();
     }
+
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
@@ -437,4 +460,7 @@ public class MainActivity extends AppCompatActivity
         // Issue the notification
         mNotificationManager.notify(0, builder.build());
     }
+
+
+
 }

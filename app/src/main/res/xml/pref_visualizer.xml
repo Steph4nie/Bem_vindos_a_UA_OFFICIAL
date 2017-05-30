@@ -7,4 +7,5 @@
             android:summaryOn="Geofences ligada"
             android:title="Geofences"
             />
+
 </PreferenceScreen>
