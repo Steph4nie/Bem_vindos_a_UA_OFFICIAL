@@ -10,32 +10,49 @@ import java.util.HashMap;
 
 public class Constants {
 
-    public static final long GEOFENCE_EXPIRATION_IN_MILLISECONDS = 12 * 60 * 60 * 1000 * 1000 * 1000;
+    //duas horas
+    public static final long GEOFENCE_EXPIRATION_IN_MILLISECONDS = 7200000;
+
+    //uma semana
+    public static final long GEOFENCE_EXPIRATION_IN_MILLISECONDS_WEEK = 604800000;
+
     public static final float GEOFENCE_RADIUS_IN_METERS = 25;
 
-    public static final HashMap<String, LatLng> LANDMARKS = new     HashMap<String, LatLng>();
+    public static final HashMap<String, LatLng> LANDMARKSArchitecture = new     HashMap<String, LatLng>();
     static {
-//        // San Francisco International Airport.
-//        LANDMARKS.put("Moscone South", new LatLng(37.783888,-122.4009012));
-//
-//        // Googleplex.
-//        LANDMARKS.put("Japantown", new LatLng(37.785281,-122.4296384));
-//
-//        // Test
-//        LANDMARKS.put("SFO", new LatLng(37.621313,-122.378955));
+        //arquitetura
 
-        // casa da Fátima
-        LANDMARKS.put("Casa da Fatita", new LatLng(40.465559,-8.675408));
-        //livraria da UA
-//        40.631404, -8.658861
-        LANDMARKS.put("Livraria da UA", new LatLng(40.631404, -8.658861));
-        //40.6292820, -8.6562000
-        LANDMARKS.put("Laboratório central de analises", new LatLng(40.6292820, -8.6562000));
-        //40.467010, -8.674420
-        LANDMARKS.put("Minipreço da Ponte de Vagos", new LatLng(40.467010,-8.674420));
-        //40.9648497,-8.6216686
-        LANDMARKS.put("Eduardo Palace", new LatLng(40.9648497,-8.6216686));
-        //40.6272159,-8.6481121
-        LANDMARKS.put("Esterqueiro", new LatLng(40.6272159,-8.6481121));
+        //40.631067, -8.659567 biblioteca
+        LANDMARKSArchitecture.put("Biblioteca", new LatLng(40.631067, -8.659567));
+        //40.630735, -8.659175 Serviços da Acção Social da UA
+        LANDMARKSArchitecture.put("Serviços da Acção Social da UA", new LatLng(40.630735, -8.659175));
+        //40.631209, -8.655459 Snack Bar
+        LANDMARKSArchitecture.put("Snack Bar", new LatLng(40.631209, -8.655459));
+        //40.629613, -8.655647 Complexo Pedagógico
+        LANDMARKSArchitecture.put("Complexo Pedagógico", new LatLng(40.629613, -8.655647));
+//        //40.465949, -8.675332
+//        LANDMARKSArchitecture.put("Casa", new LatLng(40.465949, -8.675332));
+    }
+
+    public static final HashMap<String, LatLng> LANDMARKSWelcomeUA = new     HashMap<String, LatLng>();
+    static {
+        //Bemvindos à UA
+
+        //40.631067, -8.659567 biblioteca
+        LANDMARKSWelcomeUA.put("Biblioteca", new LatLng(40.631067, -8.659567));
+        //40.630735, -8.659175 Serviços da Acção Social da UA
+        LANDMARKSWelcomeUA.put("Serviços da Acção Social da UA", new LatLng(40.630735, -8.659175));
+        //40.631209, -8.655459 Snack Bar
+        LANDMARKSWelcomeUA.put("Snack Bar", new LatLng(40.631209, -8.655459));
+        //40.629613, -8.655647 Complexo Pedagógico
+        LANDMARKSWelcomeUA.put("Complexo Pedagógico", new LatLng(40.629613, -8.655647));
+
+    }
+
+        //Eventos + promoções
+    public static final HashMap<String, LatLng> LANDMARKSGeral= new     HashMap<String, LatLng>();
+    static {
+        //40.465949, -8.675332
+        LANDMARKSGeral.put("Casa", new LatLng(40.465949, -8.675332));
     }
 }

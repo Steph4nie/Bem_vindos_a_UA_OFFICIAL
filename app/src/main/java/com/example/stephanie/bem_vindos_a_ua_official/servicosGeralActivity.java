@@ -9,15 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 
 /**
- * Created by Stephanie on 24/04/2017.
+ * Created by Stephanie on 30/05/2017.
  */
 
-public class RoteiroActivity extends AppCompatActivity{
-
+public class servicosGeralActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.roteiro_lista);
+        setContentView(R.layout.servicos_geral);
 
         ActionBar actionBar = this.getSupportActionBar();
 
@@ -27,7 +26,6 @@ public class RoteiroActivity extends AppCompatActivity{
         }
 
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -38,12 +36,10 @@ public class RoteiroActivity extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    public void getActionBemvindosMaps(View view) {
-        startActivity(new Intent(this, MapsActivity.class));
+    public void getActionAuditorio(View view) {
+        startActivity(new Intent(this, DecaActivity.class));
     }
 
-    public void getActionArquitetura(View view) {
-        startActivity(new Intent(this, MapsActivityArquitetura.class));
-    }
 }
+
 

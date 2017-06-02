@@ -21,8 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
+
         >
 
         <LinearLayout
@@ -163,46 +162,6 @@
         android:onClick="getDirectionsFromCurrentLocation"
         />
 
-
-    <!--<TextView-->
-        <!--android:id="@+id/servicos"-->
-        <!--android:textSize="16sp"-->
-        <!--android:textColor="@color/colorPrimary"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Serviços"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/numero_deca"-->
-        <!--android:layout_marginStart="8dp" />-->
-
-
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView6"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Segunda a Sexta"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/horario_deca"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--android:layout_marginStart="8dp" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/textView7"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Fechado ao sábado, domingo e feriados"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/horario_deca_horas"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/textView5"-->
-        <!--app:layout_constraintVertical_bias="0.0"-->
-        <!--android:layout_marginLeft="8dp"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--android:layout_marginStart="8dp" />-->
 
     <!--acrescentar site de cada departamento-->
     <!--acrescentar grupo da UA https://www.facebook.com/groups/2227438122/ (para apoio para os mais perdidos)-->

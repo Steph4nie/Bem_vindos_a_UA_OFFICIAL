@@ -34,10 +34,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import java.util.ArrayList;
 import java.util.Map;
 
-
-//ESTE FICHEIRO É O FICHEIRO DO BEMVINDOS À UA
-
-public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, ResultCallback<Status>, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+public class MapsActivityArquitetura extends AppCompatActivity implements OnMapReadyCallback, ResultCallback<Status>, GoogleApiClient.ConnectionCallbacks, LocationListener, GoogleApiClient.OnConnectionFailedListener {
 
     private static int Orangecolor;
     private GoogleMap mMap;
@@ -45,11 +42,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LocationRequest mLocationRequest;
     protected ArrayList<Geofence> mGeofenceList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_maps_arquitetura);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -57,12 +53,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         ActionBar actionBar = this.getSupportActionBar();
 
+        Orangecolor = getResources().getColor(R.color.colorPrimary);
         // Set the action bar back button to look like an up button
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
-        Orangecolor = getResources().getColor(R.color.colorPrimary);
 
         // Empty list for storing geofences.
         mGeofenceList = new ArrayList<Geofence>();
@@ -72,7 +67,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         // Kick off the request to build GoogleApiClient.
         buildGoogleApiClient();
-
     }
 
     protected synchronized void buildGoogleApiClient() {
@@ -117,53 +111,50 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             return;
         }
         mMap.setMyLocationEnabled(true);
-        // roteiro bemvindo UA
-        LatLng reitoria = new LatLng(40.631220, -8.657498);
-        mMap.addMarker(new MarkerOptions()
-                .position(reitoria)
-                .title("Reitoria da UA"));
+        // Add a marker in Sydney and move the camera
 
-        LatLng sasua = new LatLng(40.630735, -8.659175);
-        mMap.addMarker(new MarkerOptions()
-                .position(sasua)
-                .title("Serviços da Acção Social da UA"));
 
         LatLng biblioteca = new LatLng(40.631067, -8.659567);
         mMap.addMarker(new MarkerOptions()
                 .position(biblioteca)
                 .title("Biblioteca"));
 
-        LatLng alameda = new LatLng (40.630052, -8.657242);
+        LatLng sasua = new LatLng(40.630735, -8.659175);
         mMap.addMarker(new MarkerOptions()
-                .position(alameda)
-                .title("Alameda"));
+                .position(sasua)
+                .title("Serviços da Acção Social da UA"));
 
-        LatLng be = new LatLng (40.623843, -8.657336);
+        LatLng snack = new LatLng (40.631209, -8.655459);
         mMap.addMarker(new MarkerOptions()
-                .position(be)
-                .title("Casa do Estudante, Bar do Estudante"));
+                .position(snack)
+                .title("Snack Bar"));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(reitoria, 16));
+        LatLng cp = new LatLng (40.629613, -8.655647);
+        mMap.addMarker(new MarkerOptions()
+                .position(cp)
+                .title("Complexo Pedagógico"));
+
+        LatLng location = new LatLng(40.628842, -8.656629);
+        final LatLng campus = new LatLng(40.6299138, -8.6575809);
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(campus, 16.5f));
         mMap.addPolyline(new PolylineOptions().add(
 
-                reitoria,
-                new LatLng(40.630895, -8.658255),
-                new LatLng(40.631045, -8.659152),
                 biblioteca,
+                new LatLng(40.630928, -8.659399),
                 sasua,
-                new LatLng(40.630178, -8.657714),
-                alameda,
-                new LatLng(40.629229, -8.656400),
-                new LatLng(40.629514, -8.656051),
-                new LatLng(40.628932, -8.655284),
-                new LatLng(40.628464, -8.656174),
-                new LatLng(40.625109, -8.657982),
-                new LatLng(40.624164, -8.657290),
-                be        )
+                new LatLng(40.630801, -8.658392),
+                new LatLng(40.631778, -8.657094),
+                new LatLng(40.630756, -8.655731),
+                snack,
+                new LatLng(40.630618, -8.655474),
+                new LatLng(40.630093, -8.655045),
+                cp        )
                 .width(2)
-                .color(MapsActivity.Orangecolor)
+                .color(MapsActivityArquitetura.Orangecolor)
         );
     }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -243,7 +234,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void populateGeofenceList() {
         //vai disparar apenas notificações de eventos e promoções no background
-        for (Map.Entry<String, LatLng> entry : Constants.LANDMARKSWelcomeUA.entrySet()) {
+        for (Map.Entry<String, LatLng> entry : Constants.LANDMARKSArchitecture.entrySet()) {
             mGeofenceList.add(new Geofence.Builder()
                     .setRequestId(entry.getKey())
                     .setCircularRegion(
@@ -251,7 +242,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                             entry.getValue().longitude,
                             Constants.GEOFENCE_RADIUS_IN_METERS
                     )
-                    .setExpirationDuration(Constants.GEOFENCE_EXPIRATION_IN_MILLISECONDS)
+                    .setExpirationDuration(Constants.GEOFENCE_EXPIRATION_IN_MILLISECONDS_WEEK)
                     .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER |
                             Geofence.GEOFENCE_TRANSITION_EXIT)
                     .build());

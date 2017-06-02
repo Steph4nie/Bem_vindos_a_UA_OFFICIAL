@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <TextView
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Serviços"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/textView" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_coffee"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/coffee"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/coffee2"
+        app:layout_constraintLeft_toRightOf="@+id/wifi"
+        android:layout_marginLeft="16dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bar"
+        android:layout_below="@+id/coffee"
+        android:layout_alignStart="@+id/coffee"
+        android:id="@+id/textView7"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/coffee2"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/coffee2"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/coffee2"
+        app:layout_constraintHorizontal_bias="0.666" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_wifi"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/wifi"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/wifi2"
+        app:layout_constraintLeft_toRightOf="@+id/auditorio"
+        android:layout_marginLeft="16dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wifi"
+        android:layout_below="@+id/wifi"
+        android:layout_alignStart="@+id/wifi"
+        android:id="@+id/textView8"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/wifi"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/wifi"
+        app:layout_constraintRight_toRightOf="@+id/wifi" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_wc"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/wc"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WC"
+        android:layout_below="@+id/wc"
+        android:layout_alignStart="@+id/wc"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/wc2"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/wc2"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/wc2" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_auditorio"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/auditorio"
+        app:layout_constraintLeft_toRightOf="@+id/wc2"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/auditorio2" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auditório"
+        android:layout_below="@+id/auditorio"
+        android:layout_alignStart="@+id/auditorio"
+        android:id="@+id/textView9"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/auditorio"
+        android:layout_marginRight="0dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/auditorio"
+        app:layout_constraintRight_toRightOf="@+id/auditorio" />
+
+    <!-- 2ª linha-->
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_coffee"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/coffee2"
+        app:layout_constraintLeft_toRightOf="@+id/wifi2"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bar"
+        android:layout_below="@+id/coffee2"
+        android:layout_alignStart="@+id/coffee2"
+        android:id="@+id/textView10"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/coffee"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/coffee"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/coffee" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_wifi"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/wifi2"
+        app:layout_constraintLeft_toRightOf="@+id/auditorio2"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wifi"
+        android:layout_below="@+id/wifi2"
+        android:layout_alignStart="@+id/wifi2"
+        android:id="@+id/textView6"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/wifi2"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/wifi2"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/wifi2" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_wc"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/wc2"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/wc"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WC"
+        android:layout_below="@+id/wc2"
+        android:layout_alignStart="@+id/wc2"
+        android:id="@+id/textView2"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/wc"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/wc"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/wc" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_auditorio"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/auditorio2"
+        app:layout_constraintLeft_toRightOf="@+id/wc"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:onClick="getActionAuditorio"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auditório"
+        android:layout_below="@+id/auditorio2"
+        android:layout_alignStart="@+id/auditorio2"
+        android:id="@+id/textView5"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/auditorio2"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/auditorio2"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="@+id/auditorio2" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -23,12 +24,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -117,8 +118,18 @@ public class MainActivity extends AppCompatActivity
         // Kick off the request to build GoogleApiClient.
         buildGoogleApiClient();
 
-        //ao iniciar adiciona o geofencing
     }
+
+
+    protected void onDestroy() {
+        super.onDestroy();
+        // Unregister VisualizerActivity as an OnPreferenceChangedListener to avoid any memory leaks.
+        PreferenceManager.getDefaultSharedPreferences(this)
+                .unregisterOnSharedPreferenceChangeListener((SharedPreferences.OnSharedPreferenceChangeListener) this);
+    }
+
+
+
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -189,6 +200,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        //backonpressed
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         int id = item.getItemId();
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -199,7 +211,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent(this, servicosGeralActivity.class));
+            return true;
         } else if (id == R.id.nav_slideshow) {
             // atividade roteiros
             startActivity(new Intent(this, RoteiroActivity.class));
@@ -216,8 +229,10 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
+
+        mMap = googleMap;
+//
 
         // Add a marker in Sydney and move the camera
 
@@ -254,7 +269,7 @@ public class MainActivity extends AppCompatActivity
         final Marker deca = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(40.628842, -8.656629))
                         .title("Deca")
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_21)
                 //adicionar aqui icone personalizado que vai ter o número do dep
 
         ));
@@ -267,9 +282,11 @@ public class MainActivity extends AppCompatActivity
                 .position(new LatLng(40.629071, -8.656862))
                 .title("CCCI")
                 .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_40)
                         //adicionar aqui icone personalizado que vai ter o número do dep
                 ));
+
+
     }
 
 
@@ -302,10 +319,6 @@ public class MainActivity extends AppCompatActivity
 //    }
 
 
-
-    //TODO 2 RA https://www.youtube.com/watch?v=8mC_QRYHHZ0&list=PLREy-kwYCLATUVKOsLJ8RAoiK_wHU-79z&t=85s&index=92
-
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -336,7 +349,7 @@ public class MainActivity extends AppCompatActivity
             return;
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-
+        addGeofencesButtonHandler();
     }
 
     @Override
@@ -362,7 +375,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     //// TODO: 05/05/2017 está aqui a função para o onclick
-    public void addGeofencesButtonHandler(View view) {
+    public void addGeofencesButtonHandler() {
         if (!mGoogleApiClient.isConnected()) {
             Toast.makeText(this, getString(R.string.not_connected), Toast.LENGTH_SHORT).show();
             return;
@@ -372,7 +385,7 @@ public class MainActivity extends AppCompatActivity
             LocationServices.GeofencingApi.addGeofences(
                     mGoogleApiClient,
                     // The GeofenceRequest object.
-                    getGeofencingRequest(),
+                    getGeofencingRequest(true),
                     // A pending intent that that is reused when calling removeGeofences(). This
                     // pending intent is used to generate an intent when a matched geofence
                     // transition is observed.
@@ -384,7 +397,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void populateGeofenceList() {
-        for (Map.Entry<String, LatLng> entry : Constants.LANDMARKS.entrySet()) {
+        //vai disparar apenas notificações de eventos e promoções no background
+        for (Map.Entry<String, LatLng> entry : Constants.LANDMARKSGeral.entrySet()) {
             mGeofenceList.add(new Geofence.Builder()
                     .setRequestId(entry.getKey())
                     .setCircularRegion(
@@ -392,15 +406,16 @@ public class MainActivity extends AppCompatActivity
                             entry.getValue().longitude,
                             Constants.GEOFENCE_RADIUS_IN_METERS
                     )
-                    .setExpirationDuration(Constants.GEOFENCE_EXPIRATION_IN_MILLISECONDS)
+                    .setExpirationDuration(Constants.GEOFENCE_EXPIRATION_IN_MILLISECONDS_WEEK)
                     .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER |
                             Geofence.GEOFENCE_TRANSITION_EXIT)
                     .build());
         }
+
     }
 
 
-    private GeofencingRequest getGeofencingRequest() {
+    private GeofencingRequest getGeofencingRequest(boolean b) {
         GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
         builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
         builder.addGeofences(mGeofenceList);
@@ -465,7 +480,6 @@ public class MainActivity extends AppCompatActivity
         // Issue the notification
         mNotificationManager.notify(0, builder.build());
     }
-
 
 
 }
