@@ -45,16 +45,27 @@
         <activity
             android:name=".RoteiroActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity">
+        </activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
 
         <activity
+            android:name=".ListaEdificiosActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+        <activity
             android:name=".servicosGeralActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity">
+        </activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
@@ -76,6 +87,8 @@
             android:name=".MapsActivity"
             android:label="@string/app_name"
             android:parentActivityName=".RoteiroActivity" />
+
+
         <activity
             android:name=".SettingsActivity"
             android:label="@string/action_settings"
@@ -85,14 +98,13 @@
                 android:value=".MainActivity" />
         </activity>
 
-        <service android:name=".GeofenceTransitionsIntentService" />
-
         <activity
             android:name=".MapsActivityArquitetura"
             android:label="@string/app_name"
             android:parentActivityName=".RoteiroActivity">
         </activity>
         <service android:name=".GeofenceTransitionsIntentService" />
+        <service android:name=".GeofenceTransitionIntentServiceArquitetura" />
     </application>
 
 </manifest>

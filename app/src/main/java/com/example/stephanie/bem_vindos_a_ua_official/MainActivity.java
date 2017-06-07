@@ -30,6 +30,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -210,6 +211,8 @@ public class MainActivity extends AppCompatActivity
         }
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            startActivity(new Intent(this, ListaEdificiosActivity.class));
+            return true;
         } else if (id == R.id.nav_gallery) {
             startActivity(new Intent(this, servicosGeralActivity.class));
             return true;
@@ -286,7 +289,6 @@ public class MainActivity extends AppCompatActivity
                         //adicionar aqui icone personalizado que vai ter o número do dep
                 ));
 
-
     }
 
 
@@ -296,10 +298,21 @@ public class MainActivity extends AppCompatActivity
         String name= marker.getTitle();
         if (name.equalsIgnoreCase("Deca"))
         {
-            startActivity(new Intent(this, DecaActivity.class));
+            String textTitle = "Departamento Comunicação e Arte";
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startActivity(startChildActivityIntent);
+
         }
         if (name.equalsIgnoreCase("CCCI")) {
-            //intent for CCCI
+            String textTitle = "Complexo das ciências da comunicação e imagem";
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startActivity(startChildActivityIntent);
         }
 
        return true;
@@ -349,7 +362,6 @@ public class MainActivity extends AppCompatActivity
             return;
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-        addGeofencesButtonHandler();
     }
 
     @Override
@@ -375,7 +387,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     //// TODO: 05/05/2017 está aqui a função para o onclick
-    public void addGeofencesButtonHandler() {
+    public void addGeofencesButtonHandler(View view) {
         if (!mGoogleApiClient.isConnected()) {
             Toast.makeText(this, getString(R.string.not_connected), Toast.LENGTH_SHORT).show();
             return;

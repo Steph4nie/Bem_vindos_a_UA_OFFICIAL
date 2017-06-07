@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <!-- Roteiro Bem-Vindos-->
+    android:layout_height="match_parent">
+    <!-- Edifício Deca -->
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
-        android:onClick="getActionBemvindosMaps"
+        android:onClick="getActionDeca"
         >
 
         <RelativeLayout
@@ -24,28 +21,17 @@
 
             <TextView
                 android:id="@+id/bemvindo"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:text="Bem-vindos à UA"
+                android:text="Departamento de Comunicação e Arte"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="80dp"
-                android:textSize="12sp"
-                android:text="Roteiro ideal para novos alunos que pretendam fazer a matrícula e explorar a Universidade de Aveiro"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bemvindo" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -59,18 +45,15 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
-
     <!-- Roteiro Arquitetura-->
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="100dp"
         app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-        android:onClick="getActionArquitetura"
-        >
+        app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -80,28 +63,16 @@
 
             <TextView
                 android:id="@+id/arquitetura"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:text="Arquitetura"
+                android:text="Complexo das Ciências da Comunicação e Imagem"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="80dp"
-                android:text="Venha conhecer os edificios da Universidade de Aveiro sem perder o foco."
-                android:textSize="12sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/arquitetura" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -115,6 +86,4 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
-
-
 </android.support.design.widget.CoordinatorLayout>

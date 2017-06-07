@@ -33,15 +33,18 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
     TextView mTextViewNum;
-
+    private TextView mDisplayText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.deca_details);
 
+        mDisplayText = (TextView) findViewById(R.id.tituloText);
+
         ActionBar actionBar = this.getSupportActionBar();
 
+        Intent intentThatStartedThisActivity = getIntent();
         // Set the action bar back button to look like an up button
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -50,6 +53,23 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         TextView textView = (TextView) findViewById(R.id.telefone_numero);
 
+        if (intentThatStartedThisActivity.hasExtra(Intent.EXTRA_TEXT)) {
+            // COMPLETED (5) If the Intent contains the correct extra, retrieve the text
+            /*
+             * Now that we've checked to make sure the extra we are looking for is contained within
+             * the Intent, we can extract the extra. To do that, we simply call the getStringExtra
+             * method on the Intent. There are various other get*Extra methods you can call for
+             * different types of data. Please feel free to explore those yourself.
+             */
+            String textEntered = intentThatStartedThisActivity.getStringExtra(Intent.EXTRA_TEXT);
+
+            // COMPLETED (6) If the Intent contains the correct extra, use it to set the TextView text
+            /*
+             * Finally, we can set the text of our TextView (using setText) to the text that was
+             * passed to this Activity.
+             */
+            mDisplayText.setText(textEntered);
+        }
     }
 
 

@@ -30,6 +30,7 @@
             android:orientation="vertical"
             >
         <TextView
+            android:id="@+id/tituloText"
             android:padding="12dp"
             android:textSize="20sp"
             android:layout_width="wrap_content"
@@ -164,6 +165,7 @@
 
 
     <!--acrescentar site de cada departamento-->
+    <!--acrescentar número do dep-->
     <!--acrescentar grupo da UA https://www.facebook.com/groups/2227438122/ (para apoio para os mais perdidos)-->
 
 

@@ -21,10 +21,10 @@ import java.util.List;
  * Created by Stephanie on 05/05/2017.
  */
 
-public class GeofenceTransitionsIntentService extends IntentService {
+public class GeofenceTransitionIntentServiceArquitetura extends IntentService {
     protected static final String TAG = "geofence-transitions-service";
 
-    public GeofenceTransitionsIntentService() {
+    public GeofenceTransitionIntentServiceArquitetura() {
         // Use the TAG to name the worker thread.
         super(TAG);
     }
@@ -69,6 +69,8 @@ public class GeofenceTransitionsIntentService extends IntentService {
             // Log the error.
             // Log.e(TAG, getString(R.string.geofence_transition_invalid_type, geofenceTransition));
         }
+
+
     }
 
     private String getGeofenceTransitionDetails(
@@ -82,10 +84,12 @@ public class GeofenceTransitionsIntentService extends IntentService {
         ArrayList triggeringGeofencesIdsList = new ArrayList();
         for (Geofence geofence : triggeringGeofences) {
             triggeringGeofencesIdsList.add(geofence.getRequestId());
+
         }
         String triggeringGeofencesIdsString = TextUtils.join(", ", triggeringGeofencesIdsList);
 
         return geofenceTransitionString + ": " + triggeringGeofencesIdsString;
+
     }
 
     private String getTransitionString(int transitionType) {
@@ -99,15 +103,17 @@ public class GeofenceTransitionsIntentService extends IntentService {
         }
     }
 
+
+
     private void sendNotification(String notificationDetails) {
         // Create an explicit content Intent that starts the main Activity.
-        Intent notificationIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent notificationIntent = new Intent(getApplicationContext(), MapsActivityArquitetura.class);
 
         // Construct a task stack.
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
 
         // Add the main Activity to the task stack as the parent.
-        stackBuilder.addParentStack(MainActivity.class);
+        stackBuilder.addParentStack(MapsActivityArquitetura.class);
 
         // Push the content Intent onto the stack.
         stackBuilder.addNextIntent(notificationIntent);
@@ -127,9 +133,8 @@ public class GeofenceTransitionsIntentService extends IntentService {
                         R.mipmap.ic_launcher))
                 .setColor(Color.RED)
                 .setContentTitle(notificationDetails)
-                .setContentText(getString(R.string.geofence_transition_notification_text))
+                .setContentText(getString(R.string.geofence_transition_notification_text_arquitetura))
                 .setContentIntent(notificationPendingIntent)
-
         ;
 
         // Dismiss notification once the user touches it.
@@ -144,8 +149,8 @@ public class GeofenceTransitionsIntentService extends IntentService {
 
         mNotificationManager.cancelAll();
 
-    }
 
+    }
 
 
 }
