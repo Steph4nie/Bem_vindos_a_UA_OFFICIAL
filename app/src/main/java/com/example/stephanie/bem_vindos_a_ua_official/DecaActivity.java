@@ -2,17 +2,22 @@ package com.example.stephanie.bem_vindos_a_ua_official;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Paint;
 import android.location.Location;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -34,13 +39,17 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
     private LocationRequest mLocationRequest;
     TextView mTextViewNum;
     private TextView mDisplayText;
+    private TextView Lat;
+    ImageView myImgView;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.deca_details);
 
         mDisplayText = (TextView) findViewById(R.id.tituloText);
+
 
         ActionBar actionBar = this.getSupportActionBar();
 
@@ -51,9 +60,8 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         buildGoogleApiClient();
 
-        TextView textView = (TextView) findViewById(R.id.telefone_numero);
+        TextView textViewNum = (TextView) findViewById(R.id.telefone_numero);
 
-        if (intentThatStartedThisActivity.hasExtra(Intent.EXTRA_TEXT)) {
             // COMPLETED (5) If the Intent contains the correct extra, retrieve the text
             /*
              * Now that we've checked to make sure the extra we are looking for is contained within
@@ -63,14 +71,33 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
              */
             String textEntered = intentThatStartedThisActivity.getStringExtra(Intent.EXTRA_TEXT);
 
+            String NumberCall = intentThatStartedThisActivity.getStringExtra("numberShow");
             // COMPLETED (6) If the Intent contains the correct extra, use it to set the TextView text
             /*
              * Finally, we can set the text of our TextView (using setText) to the text that was
              * passed to this Activity.
              */
+            textViewNum.setText(NumberCall);
             mDisplayText.setText(textEntered);
-        }
+            textViewNum.setPaintFlags(textViewNum.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+
+            if (textEntered.equals("Departamento de Comunicação e Arte")) {
+                // get ahold of an instance of your layout
+                LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+                // assuming your Wizard content is in content_wizard.xml
+                View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+                // add the inflated View to the layout
+                dynamicContent.addView(wizard);
+
+                ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+                imageView.setImageResource(R.mipmap.deca_image);
+            }
+
     }
+
+
 
 
     protected synchronized void buildGoogleApiClient() {
@@ -154,13 +181,23 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
         Location loc = LocationServices
                 .FusedLocationApi
                 .getLastLocation(mGoogleApiClient);
+
+
 //40.628842, -8.656629
-        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?daddr=" + 40.628842 + "," + -8.656629));
-        startActivity(intent);
+//    TODO MUDAR COORDENADAS DE ACORDO COM O DEP
+        Intent intentThatStartedThisActivity = getIntent();
+        double Lat = intentThatStartedThisActivity.getExtras().getDouble("lat");
+        double Long = intentThatStartedThisActivity.getExtras().getDouble("long");
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?daddr=" + Lat + "," + Long));
+            startActivity(intent);
+
     }
 
     public void getActionDial(View view) {
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "234 370 389"));
+//    TODO MUDAR NUMERO DE ACORDO COM O DEP
+        Intent intentThatStartedThisActivity = getIntent();
+        int call = intentThatStartedThisActivity.getExtras().getInt("num");
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + call));
         startActivity(intent);
     }
 

@@ -74,6 +74,7 @@
 
             <TextView
                 android:id="@+id/telefone"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorPrimary"
@@ -104,7 +105,12 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="12dp" />
-            <include layout="@layout/servicos_deca"/>
+
+            <LinearLayout
+                android:id="@+id/dynamicContent"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -143,7 +149,6 @@
                         android:layout_height="match_parent"
                         android:contentDescription="@string/app_name"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/deca_image"
                         app:layout_collapseMode="parallax" />
                     <!-- tutorial: https://www.youtube.com/watch?v=BTYuLho5_rE&list=PLREy-kwYCLATUVKOsLJ8RAoiK_wHU-79z&index=95 -->
         </android.support.design.widget.CollapsingToolbarLayout>

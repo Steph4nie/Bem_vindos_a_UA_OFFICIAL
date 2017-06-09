@@ -3,22 +3,22 @@
 
     <group android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/maps"
-            android:title="Mapa" />
+        <!--<item-->
+            <!--android:id="@+id/nav_manage"-->
+            <!--android:icon="@drawable/maps"-->
+            <!--android:title="Mapa" />-->
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/info"
+            android:icon="@drawable/ic_services"
             android:title="Serviços" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/stops"
+            android:icon="@drawable/ic_routes"
             android:title="Roteiros" />
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/folded_newspaper"
-            android:title="Noticias" />
+            android:icon="@drawable/ic_search"
+            android:title="Edifícios" />
     </group>
 
 </menu>

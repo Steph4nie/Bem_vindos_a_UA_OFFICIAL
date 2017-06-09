@@ -53,6 +53,9 @@ public class Constants {
     public static final HashMap<String, LatLng> LANDMARKSGeral= new     HashMap<String, LatLng>();
     static {
         //40.465949, -8.675332
-        LANDMARKSGeral.put("Casa", new LatLng(40.465949, -8.675332));
+//        LANDMARKSGeral.put("Casa", new LatLng(40.465949, -8.675332));
+//        LANDMARKSGeral.put("SlERD 2017 going on inside Department of Comunication and Arts", new LatLng(40.628839,-8.6588147));
+        LANDMARKSGeral.put("Apresentação da versão beta a decorrer dentro do DECA", new LatLng(40.628839,-8.6588147));
+
     }
 }

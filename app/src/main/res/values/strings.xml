@@ -1,5 +1,12 @@
 <resources>
+    <!--TITULOS DAS PAGINAS -->
     <string name="app_name">Spire UA</string>
+    <string name="services">Serviços</string>
+    <string name="routes">Roteiros</string>
+    <string name="bemvindos">Bem-vindos à UA</string>
+    <string name="arquietura">Arquitetura</string>
+    <string name="edificios">Edifícios</string>
+    <string name="detalhes">Detalhes</string>
     <!--<string name="google_maps_key">AIzaSyA0Kc_3yjsBZGwwdtMbov_5DbHnuHyCDA0</string>-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -9,6 +16,7 @@
 
     <!--Nomes Departamentos-->
     <string name="deca">Departamento de Comunicação e Arte</string>
+    <string name="ccci">Complexo das Ciências da Comunicação e Imagem</string>
     <!--numero-->
     <!--email-->
 
