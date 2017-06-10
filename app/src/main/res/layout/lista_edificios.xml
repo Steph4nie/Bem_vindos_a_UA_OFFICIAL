@@ -6,11 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListaEdificiosActivity">
+<include layout="@layout/toolbar_layout">
 
+</include>
 <android.support.v7.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/recyclerview"
+    android:onClick="getActionDecaClick"
     >
 
 </android.support.v7.widget.RecyclerView>

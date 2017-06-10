@@ -40,6 +40,7 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
     TextView mTextViewNum;
     private TextView mDisplayText;
     private TextView Lat;
+    private TextView Website;
     ImageView myImgView;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -61,7 +62,7 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
         buildGoogleApiClient();
 
         TextView textViewNum = (TextView) findViewById(R.id.telefone_numero);
-
+        TextView Website = (TextView) findViewById(R.id.website_link);
             // COMPLETED (5) If the Intent contains the correct extra, retrieve the text
             /*
              * Now that we've checked to make sure the extra we are looking for is contained within
@@ -80,6 +81,8 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
             textViewNum.setText(NumberCall);
             mDisplayText.setText(textEntered);
             textViewNum.setPaintFlags(textViewNum.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+
+            Website.setPaintFlags(Website.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
             if (textEntered.equals("Departamento de Comunicação e Arte")) {
                 // get ahold of an instance of your layout
@@ -184,7 +187,7 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
 //40.628842, -8.656629
-//    TODO MUDAR COORDENADAS DE ACORDO COM O DEP
+
         Intent intentThatStartedThisActivity = getIntent();
         double Lat = intentThatStartedThisActivity.getExtras().getDouble("lat");
         double Long = intentThatStartedThisActivity.getExtras().getDouble("long");
@@ -194,11 +197,17 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void getActionDial(View view) {
-//    TODO MUDAR NUMERO DE ACORDO COM O DEP
         Intent intentThatStartedThisActivity = getIntent();
         int call = intentThatStartedThisActivity.getExtras().getInt("num");
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + call));
         startActivity(intent);
+    }
+
+    public void getActionLink(View view) {
+        String url = "https://www.ua.pt/deca";
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
     }
 
 }

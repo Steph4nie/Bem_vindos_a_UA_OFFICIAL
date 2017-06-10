@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>{
+
     ArrayList<Edificio> arrayList = new ArrayList<>();
     RecyclerAdapter(ArrayList<Edificio> arrayList) {
         this.arrayList = arrayList;
@@ -46,4 +47,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             c_name = (TextView) itemView.findViewById(R.id.name);
         }
     }
+
+    public void setFilter(ArrayList<Edificio> newList) {
+        arrayList = new ArrayList<>();
+        arrayList.addAll(newList);
+        notifyDataSetChanged();
+    }
+
+
 }

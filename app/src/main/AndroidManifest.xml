@@ -53,6 +53,7 @@
             android:value=".MainActivity" />
 
         <activity
+            android:theme="@style/AppTheme.NoActionBar"
             android:name=".ListaEdificiosActivity"
             android:label="@string/edificios"
             android:parentActivityName=".MainActivity">

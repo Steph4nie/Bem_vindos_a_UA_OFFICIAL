@@ -93,7 +93,27 @@
                 android:layout_marginStart="12dp"
                 android:onClick="getActionDial"
                 />
-
+            <TextView
+                android:id="@+id/website"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="Website"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="12dp"
+                />
+            <TextView
+                android:id="@+id/website_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="https://www.ua.pt/deca"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="12dp"
+                android:onClick="getActionLink"/>
             <TextView
                 android:id="@+id/serviços"
                 android:textSize="16sp"
