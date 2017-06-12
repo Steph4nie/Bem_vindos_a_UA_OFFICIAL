@@ -65,7 +65,7 @@ public class ListaEdificiosActivity extends AppCompatActivity implements SearchV
             arrayList.add(new Edificio(Name));
         }
 
-        recyclerAdapter  = new RecyclerAdapter(arrayList);
+        recyclerAdapter  = new RecyclerAdapter(arrayList, this);
         recyclerView.setAdapter(recyclerAdapter);
 
 
@@ -80,7 +80,8 @@ public class ListaEdificiosActivity extends AppCompatActivity implements SearchV
         }
         return super.onOptionsItemSelected(item);
     }
-//    public void getActionDecaClick(View view) {
+//    pub
+// lic void getActionDecaClick(View view) {
 //        //startActivity(new Intent(this, DecaActivity.class));
 //        for (Edificio edificio: arrayList) {
 //            String name = edificio.getName();

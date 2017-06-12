@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
-        android:onClick="getActionDeca"
         >
 
         <RelativeLayout

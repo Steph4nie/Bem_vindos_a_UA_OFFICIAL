@@ -38,9 +38,7 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
     TextView mTextViewNum;
-    private TextView mDisplayText;
-    private TextView Lat;
-    private TextView Website;
+    private TextView mDisplayText, Lat, Website;
     ImageView myImgView;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -48,7 +46,6 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.deca_details);
-
         mDisplayText = (TextView) findViewById(R.id.tituloText);
 
 

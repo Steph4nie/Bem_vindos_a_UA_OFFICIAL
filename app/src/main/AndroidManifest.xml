@@ -27,13 +27,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".SplashScreen"
             android:label="@string/app_name"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
-
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,6 +42,7 @@
             android:name=".DecaActivity"
             android:label="@string/detalhes"
             android:parentActivityName=".MainActivity">
+
         </activity>
 
         <meta-data
@@ -54,6 +53,7 @@
             android:name=".RoteiroActivity"
             android:label="@string/routes"
             android:parentActivityName=".MainActivity">
+
         </activity>
 
         <meta-data
@@ -61,24 +61,24 @@
             android:value=".MainActivity" />
 
         <activity
-            android:theme="@style/AppTheme.NoActionBar"
             android:name=".ListaEdificiosActivity"
             android:label="@string/edificios"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
+
         <activity
             android:name=".servicosGeralActivity"
             android:label="@string/services"
-            android:parentActivityName=".MainActivity">
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
+
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -96,8 +96,6 @@
             android:name=".MapsActivity"
             android:label="@string/bemvindos"
             android:parentActivityName=".RoteiroActivity" />
-
-
         <activity
             android:name=".SettingsActivity"
             android:label="@string/action_settings"
@@ -106,14 +104,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-
+        <activity android:name=".detailsEdificios">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaEdificiosActivity" />
+        </activity>
         <activity
             android:name=".MapsActivityArquitetura"
             android:label="@string/arquietura"
-            android:parentActivityName=".RoteiroActivity">
-        </activity>
+            android:parentActivityName=".RoteiroActivity"></activity>
+
         <service android:name=".GeofenceTransitionsIntentService" />
         <service android:name=".GeofenceTransitionIntentServiceArquitetura" />
+
 
     </application>
 
