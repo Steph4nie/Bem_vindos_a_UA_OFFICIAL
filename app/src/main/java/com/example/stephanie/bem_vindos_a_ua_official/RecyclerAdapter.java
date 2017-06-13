@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>{
 
     ArrayList<Edificio> arrayList = new ArrayList<>();
-    Context ctx;
+    private Context ctx;
 
     RecyclerAdapter(ArrayList<Edificio> arrayList, Context ctx) {
         this.arrayList = arrayList;
@@ -31,8 +31,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.c_name.setText(arrayList.get(position).getName());
+
+        //implement click listener
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+//        //        Snackbar.make(v, arrayList.get(position).getName(), Snackbar.LENGTH_SHORT).show();
+                Intent launchVforum = new Intent(ctx, detailsEdificios.class);
+                launchVforum.putExtra("name", arrayList.get(position).getName());
+                ctx.startActivity(launchVforum);
+            }
+        });
     }
 
 
@@ -45,8 +56,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     TextView c_name;
-    ArrayList<Edificio> arrayList;
+    ArrayList<Edificio> arrayList, newlist;
     Context ctx;
+    ItemClickListener itemClickListener;
 
         public MyViewHolder(View itemView, Context ctx, ArrayList<Edificio> arrayList) {
             super(itemView);
@@ -54,22 +66,29 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             this.ctx = ctx;
             c_name = (TextView) itemView.findViewById(R.id.name);
             itemView.setOnClickListener(this);
+
         }
 
         @Override
         public void onClick(View v) {
-        int position = getAdapterPosition();
-        Edificio edificio = this.arrayList.get(position);
-        Intent intent = new Intent(this.ctx, detailsEdificios.class);
-        intent.putExtra("name", edificio.getName());
-        this.ctx.startActivity(intent);
+//        int position = getAdapterPosition();
+//        Edificio edificio = this.arrayList.get(position);
+//        Intent intent = new Intent(this.ctx, detailsEdificios.class);
+//        intent.putExtra("name", edificio.getName());
+//        this.ctx.startActivity(intent);
+        this.itemClickListener.onItemClick(v, getLayoutPosition());
+        }
+
+        public void setItemClickListener(ItemClickListener ic) {
+            this.itemClickListener = ic;
         }
     }
 
-    public void setFilter(ArrayList<Edificio> newList) {
+    public void setFilter(ArrayList<Edificio> newList){
         arrayList = new ArrayList<>();
         arrayList.addAll(newList);
         notifyDataSetChanged();
+
     }
 
 

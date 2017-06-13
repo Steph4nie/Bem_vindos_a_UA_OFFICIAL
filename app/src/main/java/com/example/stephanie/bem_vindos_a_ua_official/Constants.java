@@ -16,7 +16,7 @@ public class Constants {
     //uma semana
     public static final long GEOFENCE_EXPIRATION_IN_MILLISECONDS_WEEK = 604800000;
 
-    public static final float GEOFENCE_RADIUS_IN_METERS = 25;
+    public static final float GEOFENCE_RADIUS_IN_METERS = 75;
 
     public static final HashMap<String, LatLng> LANDMARKSArchitecture = new     HashMap<String, LatLng>();
     static {
@@ -52,10 +52,10 @@ public class Constants {
         //Eventos + promoções
     public static final HashMap<String, LatLng> LANDMARKSGeral= new     HashMap<String, LatLng>();
     static {
-        //40.465949, -8.675332
-//        LANDMARKSGeral.put("Casa", new LatLng(40.465949, -8.675332));
-//        LANDMARKSGeral.put("SlERD 2017 going on inside Department of Comunication and Arts", new LatLng(40.628839,-8.6588147));
-        LANDMARKSGeral.put("Apresentação da versão beta a decorrer dentro do DECA", new LatLng(40.628839,-8.6588147));
+//      40.465949, -8.675332
+//      LANDMARKSGeral.put("Casa", new LatLng(40.465949, -8.675332));
+//      LANDMARKSGeral.put("SlERD 2017 going on inside Department of Comunication and Arts", new LatLng(40.628839,-8.6588147));
+        LANDMARKSGeral.put("Gravação da versão beta a decorrer dentro de casa", new LatLng(40.628842, -8.656629));
 
     }
 }

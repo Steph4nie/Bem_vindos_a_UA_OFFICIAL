@@ -19,7 +19,7 @@ import java.util.ArrayList;
  */
 
 
-public class ListaEdificiosActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{
+public class ListaEdificiosActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     String[] c_names = {"DECA - Departamento de Comunicação e Arte", "CCCI - Complexo das Ciências da Comunicação e Imagem","CIFOP - Departamento de Educação e Psicologia", "Biblioteca", "DEMAT - Departamento de Matemática", "DCSPT - Departamento de Ciências Sociais, Políticas e do Território",
     "DFIS - Departamento de Física", "Complexo de Laboratórios Tecnológicos", "DEGEIT - Departamento de Economia, Gestão e Engenharia Industrial e Turismo", "Complexo Pedagógico, Cientifico e Tecnológico",
@@ -39,6 +39,7 @@ public class ListaEdificiosActivity extends AppCompatActivity implements SearchV
     RecyclerAdapter recyclerAdapter;
     RecyclerView.LayoutManager layoutManager;
     ArrayList<Edificio> arrayList = new ArrayList<>();
+    SearchView sv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,8 +69,8 @@ public class ListaEdificiosActivity extends AppCompatActivity implements SearchV
         recyclerAdapter  = new RecyclerAdapter(arrayList, this);
         recyclerView.setAdapter(recyclerAdapter);
 
-
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -107,7 +108,7 @@ public class ListaEdificiosActivity extends AppCompatActivity implements SearchV
     }
 
     @Override
-    public boolean onQueryTextChange(String newText) {
+    public boolean onQueryTextChange(String newText)  {
         newText = newText.toLowerCase();
         ArrayList<Edificio> newList = new ArrayList<>();
         for (Edificio edificio: arrayList) {
@@ -117,6 +118,8 @@ public class ListaEdificiosActivity extends AppCompatActivity implements SearchV
         }
         recyclerAdapter.setFilter(newList);
         return true;
+
     }
+
 // TODO HANDLE CLICKS ON RECYCLERVIEW  https://www.youtube.com/watch?v=xEHHdpxW7iA
 }

@@ -64,7 +64,8 @@
             android:name=".ListaEdificiosActivity"
             android:label="@string/edificios"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
@@ -73,7 +74,8 @@
         <activity
             android:name=".servicosGeralActivity"
             android:label="@string/services"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity">
+        </activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
@@ -112,7 +114,9 @@
         <activity
             android:name=".MapsActivityArquitetura"
             android:label="@string/arquietura"
-            android:parentActivityName=".RoteiroActivity"></activity>
+            android:parentActivityName=".RoteiroActivity">
+
+        </activity>
 
         <service android:name=".GeofenceTransitionsIntentService" />
         <service android:name=".GeofenceTransitionIntentServiceArquitetura" />
