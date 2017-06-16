@@ -21,11 +21,10 @@ import java.util.ArrayList;
 
 public class ListaEdificiosActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
-    String[] c_names = {"DECA - Departamento de Comunicação e Arte", "CCCI - Complexo das Ciências da Comunicação e Imagem", "Restaurante", "DEMAT - Departamento de Matemática", "DCSPT - Departamento de Ciências Sociais, Políticas e do Território",
-    "DFIS - Departamento de Física", "Complexo de Laboratórios Tecnológicos", "DEGEIT - Departamento de Economia, Gestão e Engenharia Industrial e Turismo", "Complexo Pedagógico, Cientifico e Tecnológico",
-    "Laboratório Central de Análises", "DGEO - Departamento de Geociências", "DECIVIL - Departamento de Engenharia Civil",
-    "DEM - Departamento de Engenharia Mecâcina", "STIC - Serviços de Tecnologias de Informação e Comunicação",
-    "DEMAC - Departamento de Engenharia de Materiais e Cerâmica",
+    String[] c_names = {"Department of Communication and the Arts", "Science Communication and Image Complex", "University's Restaurant", "Department of Mathematics ", "Department of Social, Legal and Political Sciences",
+    "Department of Physics", "Technological Laboratories Centre", "Department of Economics, Management and Industrial Engineering", "Pedagogical, Scientific and Technological Complex",
+    "Central Analysis Laboratory", "Department of Geosciences", "Department of Civil Engineering",
+    "Department of Mechanical Engineering", "Department of Ceramics and Glass Engineering"
     };
 //    String[] c_names = {"DECA - Departamento de Comunicação e Arte", "CCCI - Complexo das Ciências da Comunicação e Imagem","CIFOP - Departamento de Educação e Psicologia", "Restaurante", "Biblioteca", "DEMAT - Departamento de Matemática", "DCSPT - Departamento de Ciências Sociais, Políticas e do Território",
 //            "DFIS - Departamento de Física", "Complexo de Laboratórios Tecnológicos", "DEGEIT - Departamento de Economia, Gestão e Engenharia Industrial e Turismo", "Complexo Pedagógico, Cientifico e Tecnológico",

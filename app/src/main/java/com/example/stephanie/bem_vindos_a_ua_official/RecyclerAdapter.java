@@ -39,20 +39,47 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             @Override
             public void onItemClick(View v, int pos) {
 //        //        Snackbar.make(v, arrayList.get(position).getName(), Snackbar.LENGTH_SHORT).show();
-                if (arrayList.get(position).getName().equals("DECA - Departamento de Comunicação e Arte")) {
+                if (arrayList.get(position).getName().equals("Department of Communication and the Arts")) {
                     Intent launchVforum = new Intent(ctx, detailsEdificios.class);
                     launchVforum.putExtra("name", arrayList.get(position).getName());
 
-                    String textTitle = "DECA - Departamento de Comunicação e Arte";
+                    String textTitle = "Department of Communication and the Arts";
                     double latitude = 40.62981991;
                     double longitude = -8.654311;
                     int number = 234370389;
                     String numberShow = "234 370 389";
                     String website = "https://www.ua.pt/deca";
-                    String email = "";
-                    String tituloservico = "";
-                    String horario = "";
+                    String email = "cris@ca.ua.pt";
+                    String horario = "08:00-21:00";
                     String textoDebaixoDoHorario = "";
+
+                    launchVforum.putExtra("title", textTitle);
+                    launchVforum.putExtra("lat", latitude);
+                    launchVforum.putExtra("long", longitude);
+                    launchVforum.putExtra("num", number);
+                    launchVforum.putExtra("numberShow", numberShow);
+                    launchVforum.putExtra("website", website);
+                    launchVforum.putExtra("email", email);
+                    launchVforum.putExtra("horario",  horario);
+                    launchVforum.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+                    ctx.startActivity(launchVforum);
+                }
+
+                if (arrayList.get(position).getName().equals("Department of Physics")) {
+                    Intent launchVforum = new Intent(ctx, detailsEdificios.class);
+                    launchVforum.putExtra("name", arrayList.get(position).getName());
+
+                    String textTitle = "Department of Physics";
+                    double latitude = 40.6302109;
+                    double longitude = -8.656709;
+                    int number = 234370356;
+                    String numberShow = "234 370 356";
+                    String website = "www.ua.pt/fis";
+                    String email = "fisica@ua.pt";
+                    String tituloservico = "";
+                    String horario = "08:00-21:00";
+                    String textoDebaixoDoHorario = "";
+
 
                     launchVforum.putExtra("title", textTitle);
                     launchVforum.putExtra("lat", latitude);
@@ -64,22 +91,53 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
                     launchVforum.putExtra("tituloservico", tituloservico);
                     launchVforum.putExtra("horario",  horario);
                     launchVforum.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+
                     ctx.startActivity(launchVforum);
                 }
 
-                if (arrayList.get(position).getName().equals("DFIS - Departamento de Física")) {
+                if (arrayList.get(position).getName().equals("University's Restaurant")) {
                     Intent launchVforum = new Intent(ctx, detailsEdificios.class);
                     launchVforum.putExtra("name", arrayList.get(position).getName());
 
-                    String textTitle = "DFIS - Departamento de Física";
-                    double latitude = 40.6302109;
-                    double longitude = -8.656709;
-                    int number = 234370356;
+                    String textTitle = "University's Restaurant";
+                    double latitude = 40.631243;
+                    double longitude = -8.655514;
+                    int number = 234370763;
                     String numberShow = "234 370 356";
-                    String website = "www.ua.pt/fis";
-                    String email = "";
+                    String website = "http://www2.sas.ua.pt/site/temp/alim_ementas_rest_V1.1.asp";
+                    String email = "sas@ua.pt";
                     String tituloservico = "";
-                    String horario = "";
+                    String horario = "12h00 – 14h30";
+                    String textoDebaixoDoHorario = "";
+
+
+                    launchVforum.putExtra("title", textTitle);
+                    launchVforum.putExtra("lat", latitude);
+                    launchVforum.putExtra("long", longitude);
+                    launchVforum.putExtra("num", number);
+                    launchVforum.putExtra("numberShow", numberShow);
+                    launchVforum.putExtra("website", website);
+                    launchVforum.putExtra("email", email);
+                    launchVforum.putExtra("tituloservico", tituloservico);
+                    launchVforum.putExtra("horario",  horario);
+                    launchVforum.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+
+                    ctx.startActivity(launchVforum);
+                }
+
+                if (arrayList.get(position).getName().equals("Department of Mathematics")) {
+                    Intent launchVforum = new Intent(ctx, detailsEdificios.class);
+                    launchVforum.putExtra("name", arrayList.get(position).getName());
+
+                    String textTitle = "Department of Mathematics";
+                    double latitude = 40.631243;
+                    double longitude = -8.655514;
+                    int number = 234370763;
+                    String numberShow = "234 370 356";
+                    String website = "http://www2.sas.ua.pt/site/temp/alim_ementas_rest_V1.1.asp";
+                    String email = "sas@ua.pt";
+                    String tituloservico = "";
+                    String horario = "12h00 – 14h30";
                     String textoDebaixoDoHorario = "";
 
 

@@ -14,59 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="155dp"
-        app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-        android:onClick="getActionArquitetura"
-        >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/arquitetura"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="Arquitetura"
-                android:textSize="18sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="80dp"
-                android:text="Venha conhecer os edificios da Universidade de Aveiro sem perder o foco."
-                android:textSize="12sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/arquitetura" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="@+id/arquitetura"
-                android:layout_marginStart="260dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_direction2" />
-
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:onClick="getActionBemvindosMaps"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
@@ -84,7 +31,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:text="Bem-vindos à UA"
+                android:text="Welcome to UA"
                 android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -96,7 +43,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="80dp"
-                android:text="Roteiro ideal para novos alunos que pretendam fazer a matrícula e explorar a Universidade de Aveiro"
+                android:text="You are a freshman and you know nothing about the university. Don't worry, we have your back!"
                 android:textSize="12sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bemvindo" />
@@ -105,6 +52,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="@+id/bemvindo"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_direction2" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="155dp"
+        android:onClick="getActionArquitetura"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/arquitetura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="Architecture"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="80dp"
+                android:text="You are invited to know a little bit more about the university's architecture. Will you join us?"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/arquitetura" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="@+id/arquitetura"
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ic_direction2" />

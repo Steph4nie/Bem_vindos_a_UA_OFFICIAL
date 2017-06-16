@@ -273,21 +273,21 @@ public class MainActivity extends AppCompatActivity
                         //adicionar aqui icone personalizado que vai ter o número do dep
                 ));
 
-        final Marker CIFOP = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.631815, -8.6588599))
-                .title("CIFOP")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker CIFOP = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.631815, -8.6588599))
+//                .title("CIFOP")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_5)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
-        final Marker Biblioteca = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63123669, -8.66017029))
-                .title("Biblioteca")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_17)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker Biblioteca = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63123669, -8.66017029))
+//                .title("Biblioteca")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_17)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
         final Marker DEMAT = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(40.630406, -8.658233))
@@ -361,157 +361,157 @@ public class MainActivity extends AppCompatActivity
                         //adicionar aqui icone personalizado que vai ter o número do dep
                 ));
 
-        final Marker DEM = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.62992984 , -8.65759939))
-                .title("DEM")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_22)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker DEM = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.62992984 , -8.65759939))
+//                .title("DEM")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_22)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
-        final Marker STIC = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.62992984 , -8.65759939))
-                .title("STIC")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_27)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker STIC = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.62992984 , -8.65759939))
+//                .title("STIC")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_27)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
-        final Marker CUA = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63066672 , -8.65916044))
-                .title("CUA")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_6)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker CUA = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63066672 , -8.65916044))
+//                .title("CUA")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_6)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
-        final Marker Livraria = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63138732 , -8.65889356))
-                .title("Livraria")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_q)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker Livraria = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63138732 , -8.65889356))
+//                .title("Livraria")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_q)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker DAO = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.6326164 , -8.6590391))
+//                .title("DAO")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_7)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
-        final Marker DAO = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.6326164 , -8.6590391))
-                .title("DAO")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_7)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker DETI = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.6331731 , -8.6594933))
+//                .title("DAO")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_4)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker DEBI = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.6335676 , -8.6590284))
+//                .title("DEBI")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_8)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
-        final Marker DETI = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.6331731 , -8.6594933))
-                .title("DAO")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_4)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker DEBI = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.6335676 , -8.6590284))
-                .title("DEBI")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_8)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker DEMC = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63394801 , -8.65843087))
-                .title("DEMC")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_9)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker IEETA = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.633105321 , -8.660040))
-                .title("IEETA")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_24)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker Herbário = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63353277 , -8.65997583))
-                .title("Herbário")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_26)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker IT = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63408643 , -8.65985781))
-                .title("IT")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_19)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker DLC = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63511638 , -8.65790516))
-                .title("DLC")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_2)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker TEMA = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63476221 , -8.65739018))
-                .title("TEMA")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_3)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker CESAM = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63476221 , -8.65810499))
-                .title("CESAM")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_1)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker IEUA = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63604454 , -8.65739018))
-                .title("IEUA")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_3)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker IDAD = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.6363896 , -8.6584901))
-                .title("IDAD")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_d)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker GRETUA = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.6369157 , -8.6580389))
-                .title("GRETUA")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_i)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker ResidênciaDocentes = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.63711923 , -8.65766376))
-                .title("ResidênciaDocentes")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_c)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
-
-        final Marker ISCA = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.630464 , -8.6533064))
-                .title("ISCA")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_35)
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker DEMC = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63394801 , -8.65843087))
+//                .title("DEMC")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_9)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker IEETA = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.633105321 , -8.660040))
+//                .title("IEETA")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_24)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker Herbário = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63353277 , -8.65997583))
+//                .title("Herbário")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_26)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker IT = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63408643 , -8.65985781))
+//                .title("IT")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_19)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker DLC = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63511638 , -8.65790516))
+//                .title("DLC")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_2)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker TEMA = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63476221 , -8.65739018))
+//                .title("TEMA")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_3)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker CESAM = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63476221 , -8.65810499))
+//                .title("CESAM")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_1)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker IEUA = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63604454 , -8.65739018))
+//                .title("IEUA")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_3)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker IDAD = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.6363896 , -8.6584901))
+//                .title("IDAD")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_d)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker GRETUA = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.6369157 , -8.6580389))
+//                .title("GRETUA")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_i)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker ResidênciaDocentes = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.63711923 , -8.65766376))
+//                .title("ResidênciaDocentes")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_c)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
+//
+//        final Marker ISCA = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.630464 , -8.6533064))
+//                .title("ISCA")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_35)
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
         final Marker REITORIA = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(40.63117969 , -8.65752429))
@@ -521,14 +521,14 @@ public class MainActivity extends AppCompatActivity
                         //adicionar aqui icone personalizado que vai ter o número do dep
                 ));
 
-        final Marker PAVILHAO = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(40.62981991 , -8.654311))
-                .title("PAVILHAO")
-                .snippet("Saber Mais")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_e)
-
-                        //adicionar aqui icone personalizado que vai ter o número do dep
-                ));
+//        final Marker PAVILHAO = mMap.addMarker(new MarkerOptions()
+//                .position(new LatLng(40.62981991 , -8.654311))
+//                .title("PAVILHAO")
+//                .snippet("Saber Mais")
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_e)
+//
+//                        //adicionar aqui icone personalizado que vai ter o número do dep
+//                ));
 
         //40.631540, -8.655468
         final Marker Snackbar = mMap.addMarker(new MarkerOptions()
@@ -536,7 +536,6 @@ public class MainActivity extends AppCompatActivity
                 .title("Snackbar")
                 .snippet("Saber Mais")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_r)
-
                         //adicionar aqui icone personalizado que vai ter o número do dep
                 ));
 
@@ -549,15 +548,16 @@ public class MainActivity extends AppCompatActivity
         if (name.equalsIgnoreCase("Deca"))
         {
 //            Adiciona texto
-            String textTitle = "DECA - Departamento de Comunicação e Arte";
+            String textTitle = "Department of Communication and the Arts";
             double latitude = 40.62981991;
             double longitude = -8.654311;
             int number = 234370389;
             String numberShow = "234 370 389";
-            String website = "";
-            String email = "";
-            String tituloservico = "Serviços";
-            String horario = "";
+            String website = "https://www.ua.pt/deca";
+            String email = "cris@ca.ua.pt";
+            String tituloservico = "Services";
+            String info = "";
+            String horario = "08:00-21:00";
             String textoDebaixoDoHorario = "";
 
 
@@ -574,6 +574,7 @@ public class MainActivity extends AppCompatActivity
             startChildActivityIntent.putExtra("website", website);
             startChildActivityIntent.putExtra("email", email);
             startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("info", info);
             startChildActivityIntent.putExtra("horario",  horario);
             startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
             startActivity(startChildActivityIntent);

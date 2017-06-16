@@ -50,7 +50,7 @@ public class servicosGeralActivity extends AppCompatActivity {
     }
 
     public void getActionFotocopia(View view) {
-        String textTitle = "Catacumbas UA - Centro de Impressão Digital na Universidade de Aveiro";
+        String textTitle = "Print center";
         double latitude = 40.630561;
         double longitude = -8.658942;
         int number = 234370348;
@@ -79,7 +79,7 @@ public class servicosGeralActivity extends AppCompatActivity {
     }
 
     public void getActionBanco(View view) {
-        String textTitle = "Catacumbas UA - Banco";
+        String textTitle = "Bank";
         double latitude = 40.630561;
         double longitude = -8.658942;
         int number = 234370348;
@@ -108,7 +108,7 @@ public class servicosGeralActivity extends AppCompatActivity {
     }
 
     public void getActionFarmacia(View view) {
-        String textTitle = "Catacumbas UA - Farmácia";
+        String textTitle = "Drugstore";
         double latitude = 40.630561;
         double longitude = -8.658942;
         int number = 234370348;
@@ -137,7 +137,7 @@ public class servicosGeralActivity extends AppCompatActivity {
     }
 
     public void getActionCorreios(View view) {
-        String textTitle = "Catacumbas UA - Correios";
+        String textTitle = "Post Office";
         double latitude = 40.630561;
         double longitude = -8.658942;
         int number = 234370348;
@@ -165,7 +165,7 @@ public class servicosGeralActivity extends AppCompatActivity {
     }
 
     public void getActionPapelaria(View view) {
-        String textTitle = "Catacumbas UA - Papelaria";
+        String textTitle = "Stationer's";
         double latitude = 40.630561;
         double longitude = -8.658942;
         int number = 234370348;

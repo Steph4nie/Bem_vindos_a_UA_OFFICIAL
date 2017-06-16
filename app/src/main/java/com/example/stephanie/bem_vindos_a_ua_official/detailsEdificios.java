@@ -2,6 +2,7 @@ package com.example.stephanie.bem_vindos_a_ua_official;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Paint;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -36,24 +36,32 @@ public class detailsEdificios extends AppCompatActivity implements OnMapReadyCal
 
         TextView textViewNum = (TextView) findViewById(R.id.telefone_numero);
         TextView Website = (TextView) findViewById(R.id.website_link);
+        TextView Email = (TextView) findViewById(R.id.email_link);
+        TextView horas = (TextView) findViewById(R.id.horario_deca_horas_2);
 
         textViewNum.setText(getIntent().getStringExtra("numberShow"));
         Website.setText(getIntent().getStringExtra("website"));
-
+        Email.setText(getIntent().getStringExtra("email"));
         String titulo = getIntent().getStringExtra("title");
+        String horasAbertas = getIntent().getStringExtra("horario");
+        horas.setText(horasAbertas);
 
+        //sublinhado
+        textViewNum.setPaintFlags(textViewNum.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+        Website.setPaintFlags(Website.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+        Email.setPaintFlags(Email.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
         dep.setText(titulo);
 
 
-        if (titulo.equals("DECA - Departamento de Comunicação e Arte")) {
-            // get ahold of an instance of your layout
-            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
-            // assuming your Wizard content is in content_wizard.xml
-            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
-
-            // add the inflated View to the layout
-            dynamicContent.addView(wizard);
+        if (titulo.equals("Department of Communication and the Arts")) {
+//            // get ahold of an instance of your layout
+//            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+//            // assuming your Wizard content is in content_wizard.xml
+//            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+//
+//            // add the inflated View to the layout
+//            dynamicContent.addView(wizard);
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
@@ -61,13 +69,13 @@ public class detailsEdificios extends AppCompatActivity implements OnMapReadyCal
         }
 
         if (titulo.equals("DFIS - Departamento de Física")) {
-            // get ahold of an instance of your layout
-            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
-            // assuming your Wizard content is in content_wizard.xml
-            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
-
-            // add the inflated View to the layout
-            dynamicContent.addView(wizard);
+//            // get ahold of an instance of your layout
+//            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+//            // assuming your Wizard content is in content_wizard.xml
+//            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+//
+//            // add the inflated View to the layout
+//            dynamicContent.addView(wizard);
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
@@ -75,13 +83,13 @@ public class detailsEdificios extends AppCompatActivity implements OnMapReadyCal
         }
 
         if (titulo.equals("DFIS - Departamento de Física")) {
-            // get ahold of an instance of your layout
-            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
-            // assuming your Wizard content is in content_wizard.xml
-            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
-
-            // add the inflated View to the layout
-            dynamicContent.addView(wizard);
+//            // get ahold of an instance of your layout
+//            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+//            // assuming your Wizard content is in content_wizard.xml
+//            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+//
+//            // add the inflated View to the layout
+//            dynamicContent.addView(wizard);
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
@@ -184,5 +192,17 @@ public class detailsEdificios extends AppCompatActivity implements OnMapReadyCal
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?daddr=" + Lat + "," + Long));
         startActivity(intent);
 
+    }
+
+    public void getActionEmail2 (View view) {
+        String email = getIntent().getExtras().getString("email");
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("plain/text");
+        intent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {email});
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT,"");
+        intent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+
+/* Send it off to the Activity-Chooser */
+        startActivity(Intent.createChooser(intent,"Send"));
     }
 }

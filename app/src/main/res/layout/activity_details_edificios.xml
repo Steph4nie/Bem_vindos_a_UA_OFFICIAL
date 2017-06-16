@@ -46,14 +46,14 @@
                     android:textColor="@color/colorPrimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Horário"
+                    android:text="Open Hours"
                     android:layout_marginLeft="16dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="12dp" />
 
                 <TextView
-                    android:id="@+id/horario_deca_horas"
+                    android:id="@+id/horario_deca_horas_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Encerrado feriados, sábados e domingos"
+                    android:text="Closed on bank holidays and weekends"
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="12dp" />
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
-                    android:text="Contacto"
+                    android:text="Phone Number"
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="12dp" />
@@ -113,13 +113,35 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="12dp"
                     android:onClick="getActionLink2"/>
+
+                <TextView
+                    android:id="@+id/email"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Email"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="12dp"
+                    />
+                <TextView
+                    android:id="@+id/email_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="12dp"
+                    android:onClick="getActionEmail2"/>
+
                 <TextView
                     android:id="@+id/serviços"
                     android:textSize="16sp"
                     android:textColor="@color/colorPrimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Serviços"
+                    android:text="Services"
                     android:layout_marginLeft="16dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     android:layout_marginTop="8dp"

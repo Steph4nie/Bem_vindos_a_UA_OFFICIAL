@@ -60,9 +60,9 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         TextView textViewNum = (TextView) findViewById(R.id.telefone_numero);
         TextView Website = (TextView) findViewById(R.id.website_link);
-
-
-
+        TextView Email = (TextView) findViewById(R.id.email_link);
+        TextView horas = (TextView) findViewById(R.id.horario_deca_horas);
+        TextView Serviços = (TextView) findViewById(R.id.serviços);
             // COMPLETED (5) If the Intent contains the correct extra, retrieve the text
             /*
              * Now that we've checked to make sure the extra we are looking for is contained within
@@ -80,17 +80,20 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
              */
             textViewNum.setText(NumberCall);
             mDisplayText.setText(textEntered);
+            String horasAbertas = getIntent().getStringExtra("horario");
+            Email.setText(getIntent().getStringExtra("email"));
+            horas.setText(horasAbertas);
+            //sublinhado
             textViewNum.setPaintFlags(textViewNum.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
-
             Website.setPaintFlags(Website.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+            Email.setPaintFlags(Email.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
 
-            TextView Serviços = (TextView) findViewById(R.id.serviços);
 
             String tituloservico = intentThatStartedThisActivity.getStringExtra("tituloservico");
             Serviços.setText(tituloservico);
 
-            if (textEntered.equals("DECA - Departamento de Comunicação e Arte")) {
+            if (textEntered.equals("Department of Communication and the Arts")) {
                 // get ahold of an instance of your layout
                 LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
                 // assuming your Wizard content is in content_wizard.xml
@@ -104,35 +107,35 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 imageView.setImageResource(R.mipmap.deca_image);
             }
 
-        if (textEntered.equals("Catacumbas UA - Centro de Impressão Digital na Universidade de Aveiro")) {
+        if (textEntered.equals("Print center")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
             imageView.setImageResource(R.drawable.catacumbas);
         }
 
-        if (textEntered.equals("Catacumbas UA - Banco")) {
+        if (textEntered.equals("Bank")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
             imageView.setImageResource(R.drawable.catacumbas);
         }
 
-        if (textEntered.equals("Catacumbas UA - Farmácia")) {
+        if (textEntered.equals("Drugstore")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
             imageView.setImageResource(R.drawable.catacumbas);
         }
 
-        if (textEntered.equals("Catacumbas UA - Correios")) {
+        if (textEntered.equals("Post Office")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
             imageView.setImageResource(R.drawable.catacumbas);
         }
 
-        if (textEntered.equals("Catacumbas UA - Papelaria")) {
+        if (textEntered.equals("Stationer's")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
@@ -244,14 +247,14 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void getActionLink(View view) {
-        String url = "https://www.ua.pt/deca";
+        String url = getIntent().getExtras().getString("website");
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
     }
 
     public void getActionEmail (View view) {
-        String email = "cris@ca.ua.pt";
+        String email = getIntent().getExtras().getString("email");
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("plain/text");
         intent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {email});
