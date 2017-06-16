@@ -84,7 +84,7 @@ public class GeofenceTransitionsIntentService extends IntentService {
         }
         String triggeringGeofencesIdsString = TextUtils.join(", ", triggeringGeofencesIdsList);
 
-        return geofenceTransitionString + ": " + triggeringGeofencesIdsString;
+        return  triggeringGeofencesIdsString;
     }
 
     private String getTransitionString(int transitionType) {
@@ -126,7 +126,7 @@ public class GeofenceTransitionsIntentService extends IntentService {
                         R.mipmap.ic_launcher))
                 .setColor(Color.RED)
                 .setContentTitle(notificationDetails)
-//                .setContentText(getString(R.string.geofence_transition_notification_text))
+                .setContentText(getString(R.string.geofence_transition_notification_text))
                 .setContentIntent(notificationPendingIntent)
 
         ;

@@ -38,7 +38,7 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
     TextView mTextViewNum;
-    private TextView mDisplayText, Lat, Website;
+    private TextView mDisplayText, Lat, Website, servico;
     ImageView myImgView;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -60,6 +60,9 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         TextView textViewNum = (TextView) findViewById(R.id.telefone_numero);
         TextView Website = (TextView) findViewById(R.id.website_link);
+
+
+
             // COMPLETED (5) If the Intent contains the correct extra, retrieve the text
             /*
              * Now that we've checked to make sure the extra we are looking for is contained within
@@ -81,7 +84,13 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             Website.setPaintFlags(Website.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
-            if (textEntered.equals("Departamento de Comunicação e Arte")) {
+
+            TextView Serviços = (TextView) findViewById(R.id.serviços);
+
+            String tituloservico = intentThatStartedThisActivity.getStringExtra("tituloservico");
+            Serviços.setText(tituloservico);
+
+            if (textEntered.equals("DECA - Departamento de Comunicação e Arte")) {
                 // get ahold of an instance of your layout
                 LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
                 // assuming your Wizard content is in content_wizard.xml
@@ -95,6 +104,40 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 imageView.setImageResource(R.mipmap.deca_image);
             }
 
+        if (textEntered.equals("Catacumbas UA - Centro de Impressão Digital na Universidade de Aveiro")) {
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.catacumbas);
+        }
+
+        if (textEntered.equals("Catacumbas UA - Banco")) {
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.catacumbas);
+        }
+
+        if (textEntered.equals("Catacumbas UA - Farmácia")) {
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.catacumbas);
+        }
+
+        if (textEntered.equals("Catacumbas UA - Correios")) {
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.catacumbas);
+        }
+
+        if (textEntered.equals("Catacumbas UA - Papelaria")) {
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.catacumbas);
+        }
     }
 
 
@@ -205,6 +248,18 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
+    }
+
+    public void getActionEmail (View view) {
+        String email = "cris@ca.ua.pt";
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("plain/text");
+        intent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {email});
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT,"");
+        intent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+
+/* Send it off to the Activity-Chooser */
+        startActivity(Intent.createChooser(intent,"Send"));
     }
 
 }

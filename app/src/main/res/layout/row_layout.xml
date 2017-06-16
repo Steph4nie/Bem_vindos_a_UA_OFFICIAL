@@ -27,7 +27,6 @@
                 android:layout_marginTop="16dp"
                 android:text="Departamento de Comunicação e Arte"
                 android:textSize="18sp"
-                android:textStyle="bold"
                  />
 
 

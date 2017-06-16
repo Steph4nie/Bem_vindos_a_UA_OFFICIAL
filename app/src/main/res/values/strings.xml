@@ -1,12 +1,12 @@
 <resources>
     <!--TITULOS DAS PAGINAS -->
     <string name="app_name">Spire UA</string>
-    <string name="services">Serviços</string>
-    <string name="routes">Roteiros</string>
-    <string name="bemvindos">Bem-vindos à UA</string>
-    <string name="arquietura">Arquitetura</string>
-    <string name="edificios">Edifícios</string>
-    <string name="detalhes">Detalhes</string>
+    <string name="services">Services</string>
+    <string name="routes">Routes</string>
+    <string name="bemvindos">Welcome to UA</string>
+    <string name="arquietura">Architecture</string>
+    <string name="edificios">Search</string>
+    <string name="detalhes">Details</string>
     <!--<string name="google_maps_key">AIzaSyA0Kc_3yjsBZGwwdtMbov_5DbHnuHyCDA0</string>-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -22,8 +22,8 @@
 
     <!--Nome Serviços-->
     <!-- Transition type strings -->
-    <string name="geofence_transition_entered">Entered</string>
-    <string name="geofence_transition_exited">Exited</string>
+    <string name="geofence_transition_entered"></string>
+    <string name="geofence_transition_exited"></string>
     <string name="unknown_geofence_transition">Unknown Transition</string>
 
     <!-- Error strings -->
@@ -40,7 +40,7 @@
         Geofence transition error: invalid transition type %1$d
     </string>
     <string name="geofence_transition_notification_text">Click notification to return to app</string>
-    <string name="geofence_transition_notification_text_arquitetura">Carregue aqui para voltar ao mapa e saber mais</string>
+    <string name="geofence_transition_notification_text_arquitetura">Click on the marker to get more info</string>
     <!-- Key name for storing size in SharedPreferences -->
     <string name="pref_size_key" translatable="false">size</string>
 

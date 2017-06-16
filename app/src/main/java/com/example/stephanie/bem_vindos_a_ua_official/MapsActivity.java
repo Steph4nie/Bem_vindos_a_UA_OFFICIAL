@@ -4,6 +4,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -27,7 +28,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -121,27 +124,32 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng reitoria = new LatLng(40.631220, -8.657498);
         mMap.addMarker(new MarkerOptions()
                 .position(reitoria)
-                .title("Reitoria da UA"));
+                .title("Reitoria da UA")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_25)));
 
         LatLng sasua = new LatLng(40.630735, -8.659175);
         mMap.addMarker(new MarkerOptions()
                 .position(sasua)
-                .title("Serviços da Acção Social da UA"));
+                .title("Serviços da Acção Social da UA")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_6)));
 
         LatLng biblioteca = new LatLng(40.631067, -8.659567);
         mMap.addMarker(new MarkerOptions()
                 .position(biblioteca)
-                .title("Biblioteca"));
+                .title("Biblioteca")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_17)));
 
         LatLng alameda = new LatLng (40.630052, -8.657242);
         mMap.addMarker(new MarkerOptions()
                 .position(alameda)
-                .title("Alameda"));
+                .title("Alameda")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador)));
 
         LatLng be = new LatLng (40.623843, -8.657336);
         mMap.addMarker(new MarkerOptions()
                 .position(be)
-                .title("Casa do Estudante, Bar do Estudante"));
+                .title("Casa do Estudante, Bar do Estudante")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_b)));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(reitoria, 16));
         mMap.addPolyline(new PolylineOptions().add(
@@ -163,7 +171,53 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .width(2)
                 .color(MapsActivity.Orangecolor)
         );
+
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                // Determine what marker is clicked by using the argument passed in
+                // for example, marker.getTitle() or marker.getSnippet().
+                // Code here for navigating to fragment activity.
+                String name= marker.getTitle();
+        if (name.equalsIgnoreCase("Reitoria da UA"))
+        {
+            String url = "https://www.facebook.com/groups/2227438122/";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+        }
+
+        if (name.equalsIgnoreCase("Serviços da Acção Social da UA"))
+        {
+                    String url = "https://www.ua.pt/sas/";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+        }
+
+        if (name.equalsIgnoreCase("Biblioteca"))
+        {
+                    String url = "https://www.facebook.com/bibliotecasuaveiro/";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+        }
+
+        if (name.equalsIgnoreCase("Casa do Estudante, Bar do Estudante"))
+        {
+                    String url = "https://www.facebook.com/AAUAv/";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+        }
+
+            }
+        });
+
     }
+
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -283,6 +337,36 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
     }
+
+//    @Override
+//    public boolean onMarkerClick(Marker marker) {
+//        // Reitoria da UA
+//        String name= marker.getTitle();
+//        if (name.equalsIgnoreCase("Reitoria da UA"))
+//        {
+//            String url = "https://www.ua.pt/deca";
+//            Intent i = new Intent(Intent.ACTION_VIEW);
+//            i.setData(Uri.parse(url));
+//            startActivity(i);
+//        }
+//
+//
+//        return true;
+//    }
+
+//    @Override
+//    public void onInfoWindowClick(Marker marker) {
+//        // Reitoria da UA
+//        String name= marker.getTitle();
+//        if (name.equalsIgnoreCase("Reitoria da UA"))
+//        {
+//            String url = "https://www.ua.pt/deca";
+//            Intent i = new Intent(Intent.ACTION_VIEW);
+//            i.setData(Uri.parse(url));
+//            startActivity(i);
+//        }
+//
+//    }
 
     private class Orangecolor {
     }

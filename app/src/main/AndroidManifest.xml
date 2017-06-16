@@ -21,29 +21,19 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SplashScreen"
             android:label="@string/app_name"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".DecaActivity"
             android:label="@string/detalhes"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
@@ -52,9 +42,7 @@
         <activity
             android:name=".RoteiroActivity"
             android:label="@string/routes"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
@@ -64,8 +52,7 @@
             android:name=".ListaEdificiosActivity"
             android:label="@string/edificios"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
@@ -75,12 +62,12 @@
             android:name=".servicosGeralActivity"
             android:label="@string/services"
             android:parentActivityName=".MainActivity">
+
         </activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
-
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -106,10 +93,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".detailsEdificios">
+        <activity
+            android:name=".detailsEdificios"
+            android:label="@string/detalhes"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ListaEdificiosActivity" />
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".MapsActivityArquitetura"
@@ -117,10 +107,18 @@
             android:parentActivityName=".RoteiroActivity">
 
         </activity>
+        <activity android:name=".tutorial"
+            android:theme="@style/AppTheme.NoActionBar">
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
 
         <service android:name=".GeofenceTransitionsIntentService" />
         <service android:name=".GeofenceTransitionIntentServiceArquitetura" />
-
 
     </application>
 

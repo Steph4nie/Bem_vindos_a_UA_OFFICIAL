@@ -39,9 +39,63 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             @Override
             public void onItemClick(View v, int pos) {
 //        //        Snackbar.make(v, arrayList.get(position).getName(), Snackbar.LENGTH_SHORT).show();
-                Intent launchVforum = new Intent(ctx, detailsEdificios.class);
-                launchVforum.putExtra("name", arrayList.get(position).getName());
-                ctx.startActivity(launchVforum);
+                if (arrayList.get(position).getName().equals("DECA - Departamento de Comunicação e Arte")) {
+                    Intent launchVforum = new Intent(ctx, detailsEdificios.class);
+                    launchVforum.putExtra("name", arrayList.get(position).getName());
+
+                    String textTitle = "DECA - Departamento de Comunicação e Arte";
+                    double latitude = 40.62981991;
+                    double longitude = -8.654311;
+                    int number = 234370389;
+                    String numberShow = "234 370 389";
+                    String website = "https://www.ua.pt/deca";
+                    String email = "";
+                    String tituloservico = "";
+                    String horario = "";
+                    String textoDebaixoDoHorario = "";
+
+                    launchVforum.putExtra("title", textTitle);
+                    launchVforum.putExtra("lat", latitude);
+                    launchVforum.putExtra("long", longitude);
+                    launchVforum.putExtra("num", number);
+                    launchVforum.putExtra("numberShow", numberShow);
+                    launchVforum.putExtra("website", website);
+                    launchVforum.putExtra("email", email);
+                    launchVforum.putExtra("tituloservico", tituloservico);
+                    launchVforum.putExtra("horario",  horario);
+                    launchVforum.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+                    ctx.startActivity(launchVforum);
+                }
+
+                if (arrayList.get(position).getName().equals("DFIS - Departamento de Física")) {
+                    Intent launchVforum = new Intent(ctx, detailsEdificios.class);
+                    launchVforum.putExtra("name", arrayList.get(position).getName());
+
+                    String textTitle = "DFIS - Departamento de Física";
+                    double latitude = 40.6302109;
+                    double longitude = -8.656709;
+                    int number = 234370356;
+                    String numberShow = "234 370 356";
+                    String website = "www.ua.pt/fis";
+                    String email = "";
+                    String tituloservico = "";
+                    String horario = "";
+                    String textoDebaixoDoHorario = "";
+
+
+                    launchVforum.putExtra("title", textTitle);
+                    launchVforum.putExtra("lat", latitude);
+                    launchVforum.putExtra("long", longitude);
+                    launchVforum.putExtra("num", number);
+                    launchVforum.putExtra("numberShow", numberShow);
+                    launchVforum.putExtra("website", website);
+                    launchVforum.putExtra("email", email);
+                    launchVforum.putExtra("tituloservico", tituloservico);
+                    launchVforum.putExtra("horario",  horario);
+                    launchVforum.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+
+                    ctx.startActivity(launchVforum);
+                }
             }
         });
     }

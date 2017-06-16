@@ -4,6 +4,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -27,14 +28,16 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-public class MapsActivityArquitetura extends AppCompatActivity implements OnMapReadyCallback, ResultCallback<Status>, GoogleApiClient.ConnectionCallbacks, LocationListener, GoogleApiClient.OnConnectionFailedListener {
+public class MapsActivityArquitetura extends AppCompatActivity implements OnMapReadyCallback, ResultCallback<Status>, GoogleApiClient.ConnectionCallbacks, LocationListener, GoogleApiClient.OnConnectionFailedListener, GoogleMap.OnInfoWindowClickListener {
 
     private static int Orangecolor;
     private GoogleMap mMap;
@@ -117,22 +120,26 @@ public class MapsActivityArquitetura extends AppCompatActivity implements OnMapR
         LatLng biblioteca = new LatLng(40.631067, -8.659567);
         mMap.addMarker(new MarkerOptions()
                 .position(biblioteca)
-                .title("Biblioteca"));
+                .title("Biblioteca")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_17)));
 
         LatLng sasua = new LatLng(40.630735, -8.659175);
         mMap.addMarker(new MarkerOptions()
                 .position(sasua)
-                .title("Serviços da Acção Social da UA"));
+                .title("Serviços da Acção Social da UA")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_6)));
 
         LatLng snack = new LatLng (40.631209, -8.655459);
         mMap.addMarker(new MarkerOptions()
                 .position(snack)
-                .title("Snack Bar"));
+                .title("Restaurante")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_r)));
 
         LatLng cp = new LatLng (40.629613, -8.655647);
         mMap.addMarker(new MarkerOptions()
                 .position(cp)
-                .title("Complexo Pedagógico"));
+                .title("Complexo Pedagógico")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_23)));
 
         LatLng location = new LatLng(40.628842, -8.656629);
         final LatLng campus = new LatLng(40.6299138, -8.6575809);
@@ -153,6 +160,49 @@ public class MapsActivityArquitetura extends AppCompatActivity implements OnMapR
                 .width(2)
                 .color(MapsActivityArquitetura.Orangecolor)
         );
+
+
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                // Determine what marker is clicked by using the argument passed in
+                // for example, marker.getTitle() or marker.getSnippet().
+                // Code here for navigating to fragment activity.
+                String name= marker.getTitle();
+
+                if (name.equalsIgnoreCase("Serviços da Acção Social da UA"))
+                {
+                    String url = "https://www.ua.pt/sas/PageText.aspx?id=11618";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
+
+                if (name.equalsIgnoreCase("Biblioteca"))
+                {
+                    String url = "https://pt.wikipedia.org/wiki/%C3%81lvaro_Siza_Vieira";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
+
+                if (name.equalsIgnoreCase("Complexo Pedagógico"))
+                {
+                    String url = "https://pt.wikipedia.org/wiki/V%C3%ADtor_Figueiredo";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
+
+                if (name.equalsIgnoreCase("Restaurante"))
+                {
+                    String url = "http://www.ua.pt/sas/PageText.aspx?id=15689&ref=id0eica/id0ehica";
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                }
+            }
+        });
     }
 
     @Override
@@ -271,6 +321,11 @@ public class MapsActivityArquitetura extends AppCompatActivity implements OnMapR
             String errorMessage = GeofenceErrorMessage.getErrorString(this,
                     status.getStatusCode());
         }
+
+    }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
 
     }
 

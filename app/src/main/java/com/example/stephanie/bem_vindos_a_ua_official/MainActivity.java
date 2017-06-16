@@ -5,7 +5,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -19,7 +18,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -116,17 +114,7 @@ public class MainActivity extends AppCompatActivity
         // Kick off the request to build GoogleApiClient.
         buildGoogleApiClient();
 
-
     }
-
-
-    protected void onDestroy() {
-        super.onDestroy();
-        // Unregister VisualizerActivity as an OnPreferenceChangedListener to avoid any memory leaks.
-        PreferenceManager.getDefaultSharedPreferences(this)
-                .unregisterOnSharedPreferenceChangeListener((SharedPreferences.OnSharedPreferenceChangeListener) this);
-    }
-
 
 
     protected synchronized void buildGoogleApiClient() {
@@ -542,6 +530,15 @@ public class MainActivity extends AppCompatActivity
                         //adicionar aqui icone personalizado que vai ter o número do dep
                 ));
 
+        //40.631540, -8.655468
+        final Marker Snackbar = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(40.631243, -8.655514))
+                .title("Snackbar")
+                .snippet("Saber Mais")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_r)
+
+                        //adicionar aqui icone personalizado que vai ter o número do dep
+                ));
 
     }
 
@@ -552,11 +549,17 @@ public class MainActivity extends AppCompatActivity
         if (name.equalsIgnoreCase("Deca"))
         {
 //            Adiciona texto
-            String textTitle = "Departamento de Comunicação e Arte";
+            String textTitle = "DECA - Departamento de Comunicação e Arte";
             double latitude = 40.62981991;
             double longitude = -8.654311;
             int number = 234370389;
             String numberShow = "234 370 389";
+            String website = "";
+            String email = "";
+            String tituloservico = "Serviços";
+            String horario = "";
+            String textoDebaixoDoHorario = "";
+
 
             Context context = MainActivity.this;
             Class destinationActivity = DecaActivity.class;
@@ -568,12 +571,17 @@ public class MainActivity extends AppCompatActivity
             startChildActivityIntent.putExtra("long", longitude);
             startChildActivityIntent.putExtra("num", number);
             startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
             startActivity(startChildActivityIntent);
 
 
         }
         if (name.equalsIgnoreCase("CCCI")) {
-            String textTitle = "Complexo das ciências da comunicação e imagem";
+            String textTitle = "CCCI - Complexo das ciências da comunicação e imagem";
             Context context = MainActivity.this;
             Class destinationActivity = DecaActivity.class;
             Intent startChildActivityIntent = new Intent(context, destinationActivity);

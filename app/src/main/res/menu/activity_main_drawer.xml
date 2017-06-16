@@ -10,15 +10,15 @@
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_services"
-            android:title="Serviços" />
+            android:title="Services" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_routes"
-            android:title="Roteiros" />
+            android:title="Routes" />
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_search"
-            android:title="Edifícios" />
+            android:title="Search" />
     </group>
 
 </menu>

@@ -21,18 +21,26 @@ import java.util.ArrayList;
 
 public class ListaEdificiosActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
-    String[] c_names = {"DECA - Departamento de Comunicação e Arte", "CCCI - Complexo das Ciências da Comunicação e Imagem","CIFOP - Departamento de Educação e Psicologia", "Biblioteca", "DEMAT - Departamento de Matemática", "DCSPT - Departamento de Ciências Sociais, Políticas e do Território",
+    String[] c_names = {"DECA - Departamento de Comunicação e Arte", "CCCI - Complexo das Ciências da Comunicação e Imagem", "Restaurante", "DEMAT - Departamento de Matemática", "DCSPT - Departamento de Ciências Sociais, Políticas e do Território",
     "DFIS - Departamento de Física", "Complexo de Laboratórios Tecnológicos", "DEGEIT - Departamento de Economia, Gestão e Engenharia Industrial e Turismo", "Complexo Pedagógico, Cientifico e Tecnológico",
     "Laboratório Central de Análises", "DGEO - Departamento de Geociências", "DECIVIL - Departamento de Engenharia Civil",
     "DEM - Departamento de Engenharia Mecâcina", "STIC - Serviços de Tecnologias de Informação e Comunicação",
-    "CUA - Catacumbas da Universidade de Aveiro", "Livraria e Sala de Exposições", "DAO - Departamento de Ambiente e Ordenamento",
-    "DETI - Departamento de Electrónica, Telecomunicações e Informática", "DBIO - Departamento de Biologia da Universidade de Aveiro",
-    "DEMAC - Departamento de Engenharia de Materiais e Cerâmica", "IEETA", "IT-Instituto de Telecomunicações", "DLC - Departamento de Línguas e Culturas",
-    "Instituto Confúcio", "CESAM-Centro de Estudos do Ambiente e do Mar", "IEUA - Incubadora de Empresas da Universidade de Aveiro",
-    "IDAD - Instituto do Ambiente e Desenvolvimento", "GRETUA - Grupo Experimental de Teatro da UA",
-    "Residência de Docentes, Funcionários e Estudantes de Pós-graduação", "ISCA-UA- Instituto Superior de Contabilidade e Administração da Universidade de Aveiro",
-    "Reitoria", "Pavilhão Polidesportivo Prof.Dr.Aristides Hall"
+    "DEMAC - Departamento de Engenharia de Materiais e Cerâmica",
     };
+//    String[] c_names = {"DECA - Departamento de Comunicação e Arte", "CCCI - Complexo das Ciências da Comunicação e Imagem","CIFOP - Departamento de Educação e Psicologia", "Restaurante", "Biblioteca", "DEMAT - Departamento de Matemática", "DCSPT - Departamento de Ciências Sociais, Políticas e do Território",
+//            "DFIS - Departamento de Física", "Complexo de Laboratórios Tecnológicos", "DEGEIT - Departamento de Economia, Gestão e Engenharia Industrial e Turismo", "Complexo Pedagógico, Cientifico e Tecnológico",
+//            "Laboratório Central de Análises", "DGEO - Departamento de Geociências", "DECIVIL - Departamento de Engenharia Civil",
+//            "DEM - Departamento de Engenharia Mecâcina", "STIC - Serviços de Tecnologias de Informação e Comunicação",
+//            "CUA - Catacumbas da Universidade de Aveiro", "Livraria e Sala de Exposições", "DAO - Departamento de Ambiente e Ordenamento",
+//            "DETI - Departamento de Electrónica, Telecomunicações e Informática", "DBIO - Departamento de Biologia da Universidade de Aveiro",
+//            "DEMAC - Departamento de Engenharia de Materiais e Cerâmica", "IEETA", "IT-Instituto de Telecomunicações", "DLC - Departamento de Línguas e Culturas",
+//            "Instituto Confúcio", "CESAM-Centro de Estudos do Ambiente e do Mar", "IEUA - Incubadora de Empresas da Universidade de Aveiro",
+//            "IDAD - Instituto do Ambiente e Desenvolvimento", "GRETUA - Grupo Experimental de Teatro da UA",
+//            "Residência de Docentes, Funcionários e Estudantes de Pós-graduação", "ISCA-UA- Instituto Superior de Contabilidade e Administração da Universidade de Aveiro",
+//            "Reitoria", "Pavilhão Polidesportivo Prof.Dr.Aristides Hall"
+//    };
+
+
 
     Toolbar toolbar;
     RecyclerView recyclerView;

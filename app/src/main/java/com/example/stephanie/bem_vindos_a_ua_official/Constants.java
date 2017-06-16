@@ -54,8 +54,9 @@ public class Constants {
     static {
 //      40.465949, -8.675332
 //      LANDMARKSGeral.put("Casa", new LatLng(40.465949, -8.675332));
-//      LANDMARKSGeral.put("SlERD 2017 going on inside Department of Comunication and Arts", new LatLng(40.628839,-8.6588147));
-        LANDMARKSGeral.put("Gravação da versão beta a decorrer dentro de casa", new LatLng(40.628842, -8.656629));
-
+      LANDMARKSGeral.put("SlERD 2017 going on inside Department of Comunication and Arts", new LatLng(40.628839,-8.6588147));
+//        LANDMARKSGeral.put("Gravação da versão beta a decorrer dentro de casa", new LatLng(40.628842, -8.656629));
+        LANDMARKSGeral.put("Casa", new LatLng(40.465949, -8.675332));
+        LANDMARKSGeral.put("Complexo Pedagógico", new LatLng(40.629613, -8.655647));
     }
 }

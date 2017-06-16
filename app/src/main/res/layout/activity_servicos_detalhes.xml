@@ -30,7 +30,7 @@
                 android:orientation="vertical"
                 >
                 <TextView
-                    android:id="@+id/nomeDep"
+                    android:id="@+id/tituloText"
                     android:padding="12dp"
                     android:textSize="20sp"
                     android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
                     android:textColor="@color/colorPrimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Horário"
+                    android:text="Open Hours"
                     android:layout_marginLeft="16dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     android:layout_marginTop="8dp"
@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Encerrado feriados, sábados e domingos"
+                    android:text="Closed on bank holidays and weekends"
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="12dp" />
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorPrimary"
-                    android:text="Contacto"
+                    android:text="Phone Number"
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="12dp" />
@@ -87,10 +87,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:text="@string/numero"
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="12dp"
-                    android:onClick="getActionDial2"
+                    android:onClick="getActionDial"
                     />
                 <TextView
                     android:id="@+id/website"
@@ -112,14 +113,37 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="12dp"
-                    android:onClick="getActionLink2"/>
+                    android:onClick="getActionLink"/>
+
+                <TextView
+                    android:id="@+id/email"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Website"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="12dp"
+                    />
+                <TextView
+                    android:id="@+id/email_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="cris@ca.ua.pt"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="12dp"
+                    android:onClick="getActionEmail"/>
+
                 <TextView
                     android:id="@+id/serviços"
                     android:textSize="16sp"
                     android:textColor="@color/colorPrimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Serviços"
+                    android:text="Services"
                     android:layout_marginLeft="16dp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     android:layout_marginTop="8dp"
@@ -184,7 +208,7 @@
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="bottom|right|end"
         app:pressedTranslationZ="12dp"
-        android:onClick="getDirectionsFromCurrentLocation2"
+        android:onClick=""
         />
 
 
