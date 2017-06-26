@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clica num marcador para veres mais informações e serviços."
+            android:text="Click a marker to know more informations and services."
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>

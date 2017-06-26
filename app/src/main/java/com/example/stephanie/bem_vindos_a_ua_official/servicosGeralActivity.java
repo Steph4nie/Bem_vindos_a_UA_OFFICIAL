@@ -55,10 +55,10 @@ public class servicosGeralActivity extends AppCompatActivity {
         double longitude = -8.658942;
         int number = 234370348;
         String numberShow = "(SASUA) 234 370 348";
-        String website = "";
-        String email = "";
+        String website = "https://www.ua.pt/PageText.aspx?id=14908";
+        String email = "sas@ua.pt";
         String tituloservico = "";
-        String horario = "";
+        String horario = "08h30 - 19h00";
         String textoDebaixoDoHorario = "";
 
         Context context = servicosGeralActivity.this;
@@ -84,10 +84,10 @@ public class servicosGeralActivity extends AppCompatActivity {
         double longitude = -8.658942;
         int number = 234370348;
         String numberShow = "(SASUA) 234 370 348";
-        String website = "";
-        String email = "";
+        String website = "https://www.ua.pt/PageText.aspx?id=14908";
+        String email = "sas@ua.pt";
         String tituloservico = "";
-        String horario = "";
+        String horario = "09h30 - 16h00";
         String textoDebaixoDoHorario = "";
 
         Context context = servicosGeralActivity.this;
@@ -113,10 +113,10 @@ public class servicosGeralActivity extends AppCompatActivity {
         double longitude = -8.658942;
         int number = 234370348;
         String numberShow = "(SASUA) 234 370 348";
-        String website = "";
-        String email = "";
+        String website = "https://www.ua.pt/PageText.aspx?id=14908";
+        String email = "sas@ua.pt";
         String tituloservico = "";
-        String horario = "";
+        String horario = "9h30 - 18h30";
         String textoDebaixoDoHorario = "";
 
         Context context = servicosGeralActivity.this;
@@ -142,10 +142,10 @@ public class servicosGeralActivity extends AppCompatActivity {
         double longitude = -8.658942;
         int number = 234370348;
         String numberShow = "(SASUA) 234 370 348";
-        String website = "";
-        String email = "";
+        String website = "https://www.ua.pt/PageText.aspx?id=14908";
+        String email = "sas@ua.pt";
         String tituloservico = "";
-        String horario = "";
+        String horario = "10h00 - 17h30";
         String textoDebaixoDoHorario = "";
         Context context = servicosGeralActivity.this;
         Class destinationActivity = DecaActivity.class;
@@ -170,10 +170,10 @@ public class servicosGeralActivity extends AppCompatActivity {
         double longitude = -8.658942;
         int number = 234370348;
         String numberShow = "(SASUA) 234 370 348";
-        String website = "";
-        String email = "";
+        String website = "https://www.ua.pt/PageText.aspx?id=14908";
+        String email = "sas@ua.pt";
         String tituloservico = "";
-        String horario = "";
+        String horario = "9h00 - 18h00";
         String textoDebaixoDoHorario = "";
 
         Context context = servicosGeralActivity.this;
@@ -192,6 +192,94 @@ public class servicosGeralActivity extends AppCompatActivity {
         startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
         startActivity(startChildActivityIntent);
     }
+
+    public void getActionCentroSaude(View view) {
+        String textTitle = "Health Care Center";
+        double latitude = 40.630561;
+        double longitude = -8.658942;
+        int number = 234370348;
+        String numberShow = "(SASUA) 234 370 348";
+        String website = "https://www.ua.pt/sas/page/11765?ref=ID0EHCA";
+        String email = "sas@ua.pt";
+        String tituloservico = "Services";
+        String horario = "Unknown";
+        String textoDebaixoDoHorario = "";
+
+        Context context = servicosGeralActivity.this;
+        Class destinationActivity = DecaActivity.class;
+
+        Intent startChildActivityIntent = new Intent(context, destinationActivity);
+        startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+        startChildActivityIntent.putExtra("lat", latitude);
+        startChildActivityIntent.putExtra("long", longitude);
+        startChildActivityIntent.putExtra("num", number);
+        startChildActivityIntent.putExtra("numberShow", numberShow);
+        startChildActivityIntent.putExtra("website", website);
+        startChildActivityIntent.putExtra("email", email);
+        startChildActivityIntent.putExtra("tituloservico", tituloservico);
+        startChildActivityIntent.putExtra("horario",  horario);
+        startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+        startActivity(startChildActivityIntent);
+    }
+
+    public void getActionReitoria(View view) {
+        String textTitle = "Rectory";
+        double latitude = 40.63117969;
+        double longitude = -8.65752429;
+        int number =  234370606;
+        String numberShow = "234 370 606";
+        String website = "https://www.ua.pt/sga/page/3113";
+        String email = "reitoria@ua.pt";
+        String tituloservico = "";
+        String horario = "9h00 - 16h00 (Customer Service, may vary according the service)";
+        String textoDebaixoDoHorario = "";
+
+        Context context = servicosGeralActivity.this;
+        Class destinationActivity = DecaActivity.class;
+
+        Intent startChildActivityIntent = new Intent(context, destinationActivity);
+        startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+        startChildActivityIntent.putExtra("lat", latitude);
+        startChildActivityIntent.putExtra("long", longitude);
+        startChildActivityIntent.putExtra("num", number);
+        startChildActivityIntent.putExtra("numberShow", numberShow);
+        startChildActivityIntent.putExtra("website", website);
+        startChildActivityIntent.putExtra("email", email);
+        startChildActivityIntent.putExtra("tituloservico", tituloservico);
+        startChildActivityIntent.putExtra("horario",  horario);
+        startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+        startActivity(startChildActivityIntent);
+    }
+
+    public void getActionStic(View view) {
+        String textTitle = "STIC";
+        double latitude = 40.630019;
+        double longitude = -8.658696;
+        int number =  234370099;
+        String numberShow = "234 370 099";
+        String website = "https://www.ua.pt/stic/";
+        String email = "stic-helpdesk@ua.pt";
+        String tituloservico = "";
+        String horario = "9h00-12h30 and 14h00-17h30";
+        String textoDebaixoDoHorario = "";
+
+        Context context = servicosGeralActivity.this;
+        Class destinationActivity = DecaActivity.class;
+
+        Intent startChildActivityIntent = new Intent(context, destinationActivity);
+        startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+        startChildActivityIntent.putExtra("lat", latitude);
+        startChildActivityIntent.putExtra("long", longitude);
+        startChildActivityIntent.putExtra("num", number);
+        startChildActivityIntent.putExtra("numberShow", numberShow);
+        startChildActivityIntent.putExtra("website", website);
+        startChildActivityIntent.putExtra("email", email);
+        startChildActivityIntent.putExtra("tituloservico", tituloservico);
+        startChildActivityIntent.putExtra("horario",  horario);
+        startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+        startActivity(startChildActivityIntent);
+    }
+
 }
 
 

@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            Toast.makeText(this, "GPS está ligado no seu dispositivo", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "GPS is turned on", Toast.LENGTH_LONG).show();
         } else {
             showGPSDisabledAlertToUser();
         }
@@ -127,9 +127,9 @@ public class MainActivity extends AppCompatActivity
     //SE GPS ESTIVER DESLIGADO REENCAMINHA PARA AS SETTINGS
     private void showGPSDisabledAlertToUser() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setMessage("GPS está desligado no seu dispositivo. Pretende ligá-lo?")
+        alertDialogBuilder.setMessage("GPS is turned off. Do you want to turn it on?")
                 .setCancelable(false)
-                .setPositiveButton("Carregue aqui",
+                .setPositiveButton("Click here",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 Intent callGPSSettingIntent = new Intent(
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity
                                 startActivity(callGPSSettingIntent);
                             }
                         });
-        alertDialogBuilder.setNegativeButton("Cancelar",
+        alertDialogBuilder.setNegativeButton("Cancel",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity
 
         final Marker CLT = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(40.629984, -8.656331))
-                .title("DEFI")
+                .title("CLT")
                 .snippet("Saber Mais")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_29)
                         //adicionar aqui icone personalizado que vai ter o número do dep
@@ -323,7 +323,7 @@ public class MainActivity extends AppCompatActivity
 
         final Marker DEGEIT = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(40.63058327, -8.65731105))
-                .title("DDEGEIT")
+                .title("DEGEIT")
                 .snippet("Saber Mais")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_10)
                         //adicionar aqui icone personalizado que vai ter o número do dep
@@ -339,7 +339,7 @@ public class MainActivity extends AppCompatActivity
 
         final Marker LABCENTRAL = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(40.62922755 , -8.656189896))
-                .title("CP")
+                .title("LABCENTRAL")
                 .snippet("Saber Mais")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_14)
                         //adicionar aqui icone personalizado que vai ter o número do dep
@@ -355,7 +355,7 @@ public class MainActivity extends AppCompatActivity
 
         final Marker DEC = mMap.addMarker(new MarkerOptions()
                 .position(new LatLng(40.62974867 , -8.65724936))
-                .title("DEGEO")
+                .title("DEC")
                 .snippet("Saber Mais")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador_28)
                         //adicionar aqui icone personalizado que vai ter o número do dep
@@ -549,8 +549,8 @@ public class MainActivity extends AppCompatActivity
         {
 //            Adiciona texto
             String textTitle = "Department of Communication and the Arts";
-            double latitude = 40.62981991;
-            double longitude = -8.654311;
+            double latitude =  40.629100;
+            double longitude = -8.656365;
             int number = 234370389;
             String numberShow = "234 370 389";
             String website = "https://www.ua.pt/deca";
@@ -582,15 +582,380 @@ public class MainActivity extends AppCompatActivity
 
         }
         if (name.equalsIgnoreCase("CCCI")) {
-            String textTitle = "CCCI - Complexo das ciências da comunicação e imagem";
+            String textTitle = "Science Communication and Image Complex";
+            double latitude =  40.629100;
+            double longitude = -8.656365;
+            int number = 234370389;
+            String numberShow = "234 370 389";
+            String website = "https://www.ua.pt/deca";
+            String email = "cris@ca.ua.pt";
+            String tituloservico = "Services";
+            String info = "";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
             Context context = MainActivity.this;
             Class destinationActivity = DecaActivity.class;
+
+
             Intent startChildActivityIntent = new Intent(context, destinationActivity);
             startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("info", info);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
             startActivity(startChildActivityIntent);
         }
 
-       return true;
+        if (name.equalsIgnoreCase("DEMAT")) {
+            String textTitle = "Department of Mathematics";
+            double latitude = 40.6303459;
+            double longitude = -8.6582087;
+            int number =  234372545;
+            String numberShow = "234 372 545";
+            String website = "https://www.ua.pt/dmat";
+            String email = "dmat.secretaria@ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("DCSPT")) {
+            String textTitle = "Department of Social, Legal and Political Sciences";
+            double latitude = 40.6298911;
+            double longitude = -8.6582347;
+            int number =  234372588;
+            String numberShow = "234 372 588";
+            String website = "https://www.ua.pt/dcspt/";
+            String email = "dcspt.secretaria@ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("DEFI")) {
+            String textTitle = "Department of Physics";
+            double latitude = 40.6302109;
+            double longitude = -8.656709;
+            int number = 234370356;
+            String numberShow = "234 370 356";
+            String website = "www.ua.pt/fis";
+            String email = "fisica@ua.pt";
+            String tituloservico = "";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("DEGEIT")) {
+            String textTitle = "Department of Economics, Management and Industrial Engineering";
+            double latitude = 40.63058327;
+            double longitude = -8.65731105;
+            int number =  234370361;
+            String numberShow = "234 370 361";
+            String website = "https://www.ua.pt/degeit/";
+            String email = "degei@ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("CLT")) {
+            String textTitle = "Technological Laboratories Centre";
+            double latitude = 40.629984;
+            double longitude = -8.656331;
+            int number =  234370200;
+            String numberShow = "234 370 200 (Geral)";
+            String website = "http://www.ciceco.ua.pt/";
+            String email = "ciceco@ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("CP")) {
+            String textTitle = "Pedagogical, Scientific and Technological Complex";
+            double latitude = 40.62940058;
+            double longitude = -8.65565076;
+            int number =  234370200;
+            String numberShow = "234 370 200 (Geral)";
+            String website = "https://www.ua.pt/";
+            String email = "geral@ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("LABCENTRAL")) {
+            String textTitle = "Central Analysis Laboratory";
+            double latitude = 40.62922755;
+            double longitude = -8.65618989;
+            int number =  234370990;
+            String numberShow = "234 370 990";
+            String website = "http://www.ua.pt/lca";
+            String email = "lca@lca.ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("DEGEO")) {
+            String textTitle = "Department of Geosciences";
+            double latitude = 40.62949014;
+            double longitude = -8.65697309;
+            int number =  234370357;
+            String numberShow = "234 370 357";
+            String website = "https://www.ua.pt/geo/";
+            String email = "geo.secretaria@ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("DEC")) {
+            String textTitle = "Department of Civil Engineering";
+            double latitude = 40.62974867;
+            double longitude = -8.65724936;
+            int number =  234370049 ;
+            String numberShow = "234 370 049";
+            String website = "http://www.ua.pt/decivil/";
+            String email = "sec@civil.ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("REITORIA")) {
+            String textTitle = "Rectory";
+            double latitude = 40.63117969;
+            double longitude = -8.65752429;
+            int number =  234370606;
+            String numberShow = "234 370 606";
+            String website = "https://www.ua.pt/reitoria/";
+            String email = "reitoria@ua.pt";
+            String tituloservico = "Services";
+            String horario = "08:00-21:00";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        if (name.equalsIgnoreCase("Snackbar")) {
+            String textTitle = "University's Restaurant";
+            double latitude = 40.631243;
+            double longitude = -8.655514;
+            int number = 234370763;
+            String numberShow = "234 370 356";
+            String website = "http://www2.sas.ua.pt/site/temp/alim_ementas_rest_V1.1.asp";
+            String email = "sas@ua.pt";
+            String tituloservico = "Services";
+            String horario = "12h00 – 14h30";
+            String textoDebaixoDoHorario = "";
+
+
+            Context context = MainActivity.this;
+            Class destinationActivity = DecaActivity.class;
+
+
+            Intent startChildActivityIntent = new Intent(context, destinationActivity);
+            startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, textTitle);
+            startChildActivityIntent.putExtra("lat", latitude);
+            startChildActivityIntent.putExtra("long", longitude);
+            startChildActivityIntent.putExtra("num", number);
+            startChildActivityIntent.putExtra("numberShow", numberShow);
+            startChildActivityIntent.putExtra("website", website);
+            startChildActivityIntent.putExtra("email", email);
+            startChildActivityIntent.putExtra("tituloservico", tituloservico);
+            startChildActivityIntent.putExtra("horario",  horario);
+            startChildActivityIntent.putExtra("textoDebaixoDoHorario",  textoDebaixoDoHorario);
+            startActivity(startChildActivityIntent);
+        }
+
+        return true;
     }
 
 //    @Override
@@ -656,6 +1021,7 @@ public class MainActivity extends AppCompatActivity
 
     //funções para geofencing
     private PendingIntent getGeofencePendingIntent() {
+        
         Intent intent = new Intent(this, GeofenceTransitionsIntentService.class);
         // We use FLAG_UPDATE_CURRENT so that we get the same pending intent back when calling addgeoFences()
         return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);

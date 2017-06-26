@@ -82,6 +82,7 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
             mDisplayText.setText(textEntered);
             String horasAbertas = getIntent().getStringExtra("horario");
             Email.setText(getIntent().getStringExtra("email"));
+            Website.setText(getIntent().getStringExtra("website"));
             horas.setText(horasAbertas);
             //sublinhado
             textViewNum.setPaintFlags(textViewNum.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
@@ -107,39 +108,258 @@ public class DecaActivity extends AppCompatActivity implements OnMapReadyCallbac
                 imageView.setImageResource(R.mipmap.deca_image);
             }
 
+        if (textEntered.equals("Science Communication and Image Complex")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.ccci);
+        }
+
+        if (textEntered.equals("Department of Physics")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.mipmap.dfis);
+        }
+
+        if (textEntered.equals("University's Restaurant")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_restaurant, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.restaurante);
+        }
+
+        if (textEntered.equals("Department of Mathematics")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.matematica);
+        }
+
+        if (textEntered.equals("Department of Social, Legal and Political Sciences")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.ciencias_politicas);
+        }
+
+        if (textEntered.equals("Technological Laboratories Centre")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.ciceco);
+        }
+
+        if (textEntered.equals("Department of Economics, Management and Industrial Engineering")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.degei);
+        }
+
+        if (textEntered.equals("Pedagogical, Scientific and Technological Complex")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.cp);
+        }
+
+        if (textEntered.equals("Central Analysis Laboratory")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.laboratorio_de_analises);
+        }
+
+        if (textEntered.equals("Department of Geosciences")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.geociencias);
+        }
+
+        if (textEntered.equals("Department of Civil Engineering")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.civil);
+        }
+
+        if (textEntered.equals("Department of Mechanical Engineering")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.mecanica);
+        }
+
+        if (textEntered.equals("Department of Ceramics and Glass Engineering")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_deca, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.mecanica);
+        }
+
+
+
         if (textEntered.equals("Print center")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
-            imageView.setImageResource(R.drawable.catacumbas);
+            imageView.setImageResource(R.drawable.fotocopias);
         }
 
         if (textEntered.equals("Bank")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
-            imageView.setImageResource(R.drawable.catacumbas);
+            imageView.setImageResource(R.drawable.papelaria);
         }
 
         if (textEntered.equals("Drugstore")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
-            imageView.setImageResource(R.drawable.catacumbas);
+            imageView.setImageResource(R.drawable.farmacia);
         }
 
         if (textEntered.equals("Post Office")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
-            imageView.setImageResource(R.drawable.catacumbas);
+            imageView.setImageResource(R.drawable.papelaria);
         }
 
         if (textEntered.equals("Stationer's")) {
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView4);
 
-            imageView.setImageResource(R.drawable.catacumbas);
+            imageView.setImageResource(R.drawable.papelaria);
+        }
+
+        if (textEntered.equals("Rectory")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_reitoria, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.reitoria);
+        }
+
+        if (textEntered.equals("STIC")) {
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.stic);
+        }
+
+        if (textEntered.equals("Health Care Center")) {
+            // get ahold of an instance of your layout
+            LinearLayout dynamicContent = (LinearLayout) findViewById(R.id.dynamicContent);
+            // assuming your Wizard content is in content_wizard.xml
+            View wizard = getLayoutInflater().inflate(R.layout.servicos_health, null);
+
+            // add the inflated View to the layout
+            dynamicContent.addView(wizard);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView4);
+
+            imageView.setImageResource(R.drawable.sasua);
         }
     }
 

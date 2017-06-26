@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Encontra o serviço que desejas."
+            android:text="Find the service you wish."
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>
@@ -33,7 +33,7 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Encontra o teu departamento."
+            android:text="Find your department ."
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Viaja pela Universidade de Aveiro."
+            android:text="Travel through University of Aveiro."
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>

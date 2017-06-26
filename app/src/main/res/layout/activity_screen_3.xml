@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Relaxa e percorre um roteiro."
+            android:text="Relax and go on a itinerary."
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>
@@ -33,7 +33,7 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Podes saber mais sobre os edíficios do Campus, ou descobrir aqueles que mais precisas para esta nova etapa!"
+            android:text="You can know more about the departments around the campus, or even find those you need more for this new adventure!"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>

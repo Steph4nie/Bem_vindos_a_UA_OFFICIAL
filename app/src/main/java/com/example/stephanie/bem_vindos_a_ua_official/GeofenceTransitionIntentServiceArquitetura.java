@@ -88,7 +88,7 @@ public class GeofenceTransitionIntentServiceArquitetura extends IntentService {
         }
         String triggeringGeofencesIdsString = TextUtils.join(", ", triggeringGeofencesIdsList);
 
-        return geofenceTransitionString + ": " + triggeringGeofencesIdsString;
+        return triggeringGeofencesIdsString;
 
     }
 

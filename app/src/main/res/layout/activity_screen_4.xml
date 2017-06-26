@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clica na sineta para obteres as tuas notificações quando passas perto de um edificio."
+            android:text="Click the bell to get your notifications when you are near a department."
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>

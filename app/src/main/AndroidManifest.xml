@@ -117,7 +117,8 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".GeofenceTransitionsIntentService" />
+        <service
+            android:name=".GeofenceTransitionsIntentService" />
         <service android:name=".GeofenceTransitionIntentServiceArquitetura" />
 
     </application>

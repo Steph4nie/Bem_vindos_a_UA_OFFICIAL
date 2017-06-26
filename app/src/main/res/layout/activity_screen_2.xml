@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recebe notificações de eventos/palestras a acontecer pelo Campus."
+            android:text="Get notifications about events/speeches happening through the Campus,"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>
@@ -33,7 +33,7 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Assim como outras informações."
+            android:text="as well as other informations."
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textAlignment="center"/>
